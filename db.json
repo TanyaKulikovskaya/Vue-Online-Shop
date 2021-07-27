@@ -1,0 +1,52 @@
+{
+    "products": [
+      {
+        "image": "1.jpg",
+        "name": "Chair",
+        "price": 4100.23,
+        "article": "1",
+        "available": true,
+        "category": "Furniture"
+      },
+      {
+        "image": "2.jpg",
+        "name": "Vase",
+        "price": 1150.12,
+        "article": "2",
+        "available": true,
+        "category": "Decor"
+      },
+      {
+        "image": "3.jpg",
+        "name": "Chair",
+        "price": 3200.51,
+        "article": "3",
+        "available": false,
+        "category": "Furniture"
+      },
+      {
+        "image": "4.jpg",
+        "name": "Storage",
+        "price": 5300.12,
+        "article": "4",
+        "available": true,
+        "category": "Furniture"
+      },
+      {
+        "image": "5.jpg",
+        "name": "Vase",
+        "price": 1500.35,
+        "article": "5",
+        "available": false,
+        "category": "Decor"
+      },
+      {
+        "image": "6.jpg",
+        "name": "Dining set",
+        "price": 6700.41,
+        "article": "6",
+        "available": true,
+        "category": "Furniture"
+      }
+    ]
+  }
