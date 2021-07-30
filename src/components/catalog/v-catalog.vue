@@ -6,9 +6,14 @@
           </div>
       </router-link>
       <h1>Catalog</h1>
+      <v-select 
+        :options="categories"
+        :selected="selected"
+        @select="sortByCategories"
+      />
       <div class="v-catalog__list">
             <v-catalog-item 
-            v-for="product in PRODUCTS"
+            v-for="product in filteredProducts"
             :key="product.article"
             :product_data="product"
             @addToCart="addToCart"
@@ -20,21 +25,37 @@
 <script>
 import vCatalogItem from './v-catalog-item.vue'
 import { mapActions, mapGetters } from 'vuex'
+import vSelect from './v-select.vue'
 
 export default {
     name: "v-catalog",
     components: {
-       vCatalogItem,
+        vCatalogItem,
+        vSelect,
     },
     data() {
         return {
+             categories: [
+                {name: 'All', value: 'ALL'},
+                {name: 'Furniture', value: 'FURNITURE'},
+                {name: 'Decor', value: 'DECOR'},
+        ],
+        selected: 'All',
+        sortedProducts: []
         }
     },
     computed: {
         ...mapGetters([
             'PRODUCTS',
             'CART'
-            ])
+            ]),
+        filteredProducts() {
+            if(this.sortedProducts.length) {
+                return this.sortedProducts;
+            } else {
+                return this.PRODUCTS;
+            }
+        },
     },
     methods: {
         ...mapActions([
@@ -43,7 +64,17 @@ export default {
         ]),
         addToCart(data) {
             this.ADD_TO_CART(data);
-        }
+        },
+        sortByCategories(category) {
+            this.sortedProducts = [];
+            this.PRODUCTS.map(item => {
+                if(item.category === category.name) {
+                    this.sortedProducts.push(item);
+                }
+            });
+            this.selected = category.name;
+        },
+
     },
     mounted() {
         this.GET_PRODUCTS_FROM_API()
