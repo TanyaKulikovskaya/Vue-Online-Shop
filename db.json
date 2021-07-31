@@ -2,48 +2,48 @@
     "products": [
       {
         "image": "1.jpg",
-        "name": "Chair",
-        "price": 4100.23,
+        "name": "Teak & Velvet Lounger",
+        "price": 410.99,
         "article": "1",
         "available": true,
         "category": "Furniture"
       },
       {
         "image": "2.jpg",
-        "name": "Vase",
-        "price": 1150.12,
+        "name": "Terazzo Vase",
+        "price": 115.99,
         "article": "2",
         "available": true,
         "category": "Decor"
       },
       {
         "image": "3.jpg",
-        "name": "Chair",
-        "price": 3200.51,
+        "name": "Rattan & Teak Lounger",
+        "price": 320.99,
         "article": "3",
         "available": false,
         "category": "Furniture"
       },
       {
         "image": "4.jpg",
-        "name": "Storage",
-        "price": 5300.12,
+        "name": "Teak Storage",
+        "price": 530.99,
         "article": "4",
         "available": true,
         "category": "Furniture"
       },
       {
         "image": "5.jpg",
-        "name": "Vase",
-        "price": 1500.35,
+        "name": "Allegra Vase",
+        "price": 150.99,
         "article": "5",
         "available": false,
         "category": "Decor"
       },
       {
         "image": "6.jpg",
-        "name": "Dining set",
-        "price": 6700.41,
+        "name": "Solid Teak Dining set",
+        "price": 670.99,
         "article": "6",
         "available": true,
         "category": "Furniture"

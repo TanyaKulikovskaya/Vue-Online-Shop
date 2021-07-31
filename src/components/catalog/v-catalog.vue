@@ -2,7 +2,8 @@
     <div class="v-catalog">
         <router-link :to="{name: 'cart', params: {cart_data: CART}}">
             <div class="v-catalog__link-to-cart">
-            Cart {{ CART.length }}
+            Cart 
+                <v-cart-counter-badge :count="CART.length" />
             </div>
         </router-link>
         <h1>Catalog</h1>
@@ -26,12 +27,14 @@
 import vCatalogItem from './v-catalog-item.vue'
 import { mapActions, mapGetters } from 'vuex'
 import vSelect from './v-select.vue'
+import vCartCounterBadge from './v-cart-counter-badge.vue'
 
 export default {
     name: "v-catalog",
     components: {
         vCatalogItem,
         vSelect,
+        vCartCounterBadge
     },
     data() {
         return {
@@ -93,12 +96,11 @@ export default {
             display: grid;
             grid-template-columns: repeat(3,1fr);
             grid-gap: 32px;
-            padding: 0;
         }
         &__link-to-cart {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 20px;
+            right: 20px;
             padding: $padding*2;
         }
     }

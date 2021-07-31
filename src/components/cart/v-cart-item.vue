@@ -5,8 +5,8 @@
         :src=" require(`../../assets/images/${cart_item_data.image}`)" 
         :alt="`Image of ${cart_item_data.name}`">
       <div class="v-cart-item__info">
-          <span>{{ cart_item_data.name }}</span>
-          <span>{{ cart_item_data.price }}</span>
+          <p><b>{{ cart_item_data.name }}</b></p>
+          <span>$ {{ cart_item_data.price }}</span>
           <span>Article: {{ cart_item_data.article }}</span>
       </div>
        <div class="v-cart-item__quantity">
@@ -28,7 +28,7 @@
       <button
         class="btn"
         @click="deleteFromCart">
-        delete
+        Delete
       </button>
   </div>
 </template>
@@ -62,7 +62,6 @@ export default {
 <style lang="scss">
     .v-cart-item {
         display: flex;
-        justify-content: space-between;
         align-items: center;
         box-shadow: 0 0 8px 0 #e0e0e0;
         padding: $padding*2;
@@ -71,8 +70,12 @@ export default {
             max-width: 90px;
         }
         &__info {
+            flex-basis: 45%;
             display: flex;
             flex-direction: column;
+        }
+        &__quantity {
+            flex-basis: 30%;
         }
         .quantity-btn{
             cursor: pointer;

@@ -72,7 +72,6 @@ export default {
             font-weight: 700;
             display: flex;
             justify-content: center;
-            margin-bottom: $margin;
         }
         &__options {
             position: absolute;

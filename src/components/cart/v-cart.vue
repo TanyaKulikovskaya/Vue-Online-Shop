@@ -8,7 +8,7 @@
       <h1>Cart</h1>
       <p v-if="!cart_data.length">There are no products in cart</p>
       <v-cart-item 
-         v-for="(item, index) in cart_data"
+        v-for="(item, index) in cart_data"
         :key="item.article"
         :cart_item_data="item"
         @deleteFromCart="deleteFromCart(index)"
@@ -16,7 +16,7 @@
         @increment="increment(index)"
       />
       <div class="v-cart__total">
-          <p>Total: {{ cartTotalCost }}</p>
+          <p><b>Total:</b> $ {{ cartTotalCost }}</p>
       </div>
   </div>
   </template>
@@ -81,9 +81,7 @@ export default {
             left: 0;
             right: 0;
             padding: $padding*2 $padding*3;
-            text-align: left;
-            background-color: rgb(105, 106, 173);
-            color: #fff;
+            background-color: #e0e0e0;
             font-size: 28px;
         }
     }

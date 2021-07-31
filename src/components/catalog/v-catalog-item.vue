@@ -10,7 +10,7 @@
         </p>
       <p 
         class="v-catalog-item__price">
-          <b>$ {{ product_data.price }}</b>
+        $ {{ product_data.price }}
       </p>
     <button 
       class="v-catalog-item__add-to-cart-btn btn"
@@ -50,6 +50,9 @@ export default {
           width: 100%;
           max-height: 290px;
           object-fit: cover;
-      }
+        }
+        &__name {
+          font-weight: 700;
+        }
     }
 </style>
