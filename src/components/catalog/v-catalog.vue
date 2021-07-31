@@ -1,25 +1,25 @@
 <template>
-  <div class="v-catalog">
-      <router-link :to="{name: 'cart', params: {cart_data: CART}}">
-          <div class="v-catalog__link-to-cart">
-          Cart {{ CART.length }}
-          </div>
-      </router-link>
-      <h1>Catalog</h1>
-      <v-select 
-        :options="categories"
-        :selected="selected"
-        @select="sortByCategories"
-      />
-      <div class="v-catalog__list">
+    <div class="v-catalog">
+        <router-link :to="{name: 'cart', params: {cart_data: CART}}">
+            <div class="v-catalog__link-to-cart">
+            Cart {{ CART.length }}
+            </div>
+        </router-link>
+        <h1>Catalog</h1>
+        <v-select 
+            :options="categories"
+            :selected="selected"
+            @select="sortByCategories"
+        />
+        <div class="v-catalog__list">
             <v-catalog-item 
-            v-for="product in filteredProducts"
-            :key="product.article"
-            :product_data="product"
-            @addToCart="addToCart"
+                v-for="product in filteredProducts"
+                :key="product.article"
+                :product_data="product"
+                @addToCart="addToCart"
             />
-      </div>
-  </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -35,20 +35,20 @@ export default {
     },
     data() {
         return {
-             categories: [
+            categories: [
                 {name: 'All', value: 'ALL'},
                 {name: 'Furniture', value: 'FURNITURE'},
                 {name: 'Decor', value: 'DECOR'},
-        ],
-        selected: 'All',
-        sortedProducts: []
+            ],
+            selected: 'All',
+            sortedProducts: []
         }
     },
     computed: {
         ...mapGetters([
             'PRODUCTS',
             'CART'
-            ]),
+        ]),
         filteredProducts() {
             if(this.sortedProducts.length) {
                 return this.sortedProducts;
@@ -78,11 +78,11 @@ export default {
     },
     mounted() {
         this.GET_PRODUCTS_FROM_API()
-        .then((response) => {
-            if(response.data) {
-                console.log('Data arrived');
-            }
-        })
+            .then((response) => {
+                if(response.data) {
+                    console.log('Data arrived');
+                }
+            })
     }
 }
 </script>
@@ -92,6 +92,8 @@ export default {
         &__list {
             display: grid;
             grid-template-columns: repeat(3,1fr);
+            grid-gap: 32px;
+            padding: 0;
         }
         &__link-to-cart {
             position: absolute;

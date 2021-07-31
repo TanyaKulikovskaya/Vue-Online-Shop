@@ -59,6 +59,31 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+    .v-select {
+        position: relative;
+        width: 180px;
+        border: 1px solid #e0e0e0;
+        border-radius: $radius;
+        margin-bottom: $margin*4;
+        cursor: pointer;
+        &__title {
+            position: relative;
+            font-weight: 700;
+            display: flex;
+            justify-content: center;
+            margin-bottom: $margin;
+        }
+        &__options {
+            position: absolute;
+            display: block;
+            width: 100%;
+            top: 100%;
+            left: 0;
+            border: 1px solid #e0e0e0;
+            border-radius: $radius;
+            background: #ffffff;
+        }
+    }
 
 </style>

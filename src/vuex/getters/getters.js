@@ -4,5 +4,5 @@ export default { // getters = computed properties
     },
     CART(state) {
         return state.cart;
-    }
+    },
 }

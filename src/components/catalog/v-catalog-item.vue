@@ -10,14 +10,13 @@
         </p>
       <p 
         class="v-catalog-item__price">
-        {{ product_data.price }}
-        </p>
-      <button 
-        class="v-catalog-item__add-to-cart-btn btn"
-        @click="addToCart"
-        >
-        Add to cart
-    </button>
+          <b>$ {{ product_data.price }}</b>
+      </p>
+    <button 
+      class="v-catalog-item__add-to-cart-btn btn"
+      @click="addToCart">
+      Add to cart
+    </button>    
   </div>
 </template>
 
@@ -47,11 +46,10 @@ export default {
     .v-catalog-item {
         box-shadow: 0 0 8px 0 #e0e0e0;
         padding: $padding*2;
-        margin: $margin*2;
-      &__img {
-        width: 100%;
-        max-height: 280px;
-        object-fit: cover;
+        &__img {
+          width: 100%;
+          max-height: 290px;
+          object-fit: cover;
       }
     }
 </style>
