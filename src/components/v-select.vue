@@ -82,6 +82,7 @@ export default {
             border: 1px solid #e0e0e0;
             border-radius: $radius;
             background: #ffffff;
+            font-size: 14px;
         }
     }
 

@@ -11,5 +11,16 @@ export default { // actions = methods
                 console.log(error)
                 return error;
             })
+    },
+    GET_PRODUCT_FROM_API({commit}, id) {
+        return axios.get(`http://localhost:3000/products/${id}`)
+            .then((product) => {
+                commit('SET_PRODUCT_TO_STATE', product.data);
+                return product;
+            })
+            .catch((error) => {
+                console.log(error)
+                return error;
+            })
     }
 }

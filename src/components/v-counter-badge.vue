@@ -1,18 +1,20 @@
 <template>
-  <span v-if="count > 0" class="v-cart-counter-badge">
+  <span v-if="count > 0" class="v-counter-badge">
     {{ count }}
   </span>
 </template>
 
 <script>
 export default {
-    name: 'v-cart-counter-badge',
-    props: ['count'],
+    name: 'v-counter-badge',
+    props: {
+        count: Number
+    }
 }
 </script>
 
 <style>
-    .v-cart-counter-badge {
+    .v-counter-badge {
         position: absolute;
         top: 3px;
         right: -3px;

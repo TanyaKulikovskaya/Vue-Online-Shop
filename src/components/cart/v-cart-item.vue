@@ -7,7 +7,7 @@
       <div class="v-cart-item__info">
           <p><b>{{ cart_item_data.name }}</b></p>
           <span>$ {{ cart_item_data.price }}</span>
-          <span>Article: {{ cart_item_data.article }}</span>
+          <span>Article: {{ cart_item_data.id }}</span>
       </div>
        <div class="v-cart-item__quantity">
           <p>Quantity:</p> 
@@ -17,11 +17,11 @@
                 @click="decrementItem">
                 -
                 </span>
-              {{ cart_item_data.quantity }}
+                    {{ cart_item_data.quantity }}
                <span 
-               class="quantity-btn" 
-               @click="incrementItem">
-               +
+                class="quantity-btn" 
+                @click="incrementItem">
+                +
                </span>
           </span>
        </div>

@@ -2,11 +2,14 @@ export default { // setting and updating the state
     SET_PRODUCTS_TO_STATE: (state, products) => {
         state.products = products;
     },
+    SET_PRODUCT_TO_STATE: (state, product) => {
+        state.product = product;
+    },
     SET_CART: (state, product) => {
         if(state.cart.length) {
             let isProductExist = false;
             state.cart.map(item => {
-                if(item.article === product.article) {
+                if(item.id === product.id) {
                     isProductExist = true;
                     item.quantity++;
                 }

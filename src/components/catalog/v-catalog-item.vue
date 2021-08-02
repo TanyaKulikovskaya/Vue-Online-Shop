@@ -1,17 +1,13 @@
 <template>
   <div class="v-catalog-item">
+    <router-link :to="{ name: 'product', params: { id: product_data.id}}">
       <img 
         class="v-catalog-item__img" 
         :src=" require(`../../assets/images/${product_data.image}`)" 
         :alt="`Image of ${product_data.name}`">
-      <p 
-        class="v-catalog-item__name">
-        {{ product_data.name }}
-        </p>
-      <p 
-        class="v-catalog-item__price">
-        $ {{ product_data.price }}
-      </p>
+      <p class="v-catalog-item__name">{{ product_data.name }}</p>
+      <p class="v-catalog-item__price">$ {{ product_data.price }}</p>
+    </router-link>
     <button 
       class="v-catalog-item__add-to-cart-btn btn"
       @click="addToCart">
