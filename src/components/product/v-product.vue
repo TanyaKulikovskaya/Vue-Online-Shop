@@ -1,9 +1,9 @@
 <template>
     <div class="v-product">
         <div class="v-product__img">
-            <!-- <img 
-                :src=" require(`../../assets/images/${PRODUCT.image}`)" 
-                :alt="`Image of ${PRODUCT.name}`"> -->
+            <img 
+                :src="productWithImage.image" 
+                :alt="`Image of ${PRODUCT.name}`">
         </div>
         <div class="v-product__info">
            <h1>{{ PRODUCT.name }}</h1>
@@ -23,6 +23,12 @@ export default {
         ...mapGetters([
             'PRODUCT',
         ]),
+        productWithImage() {
+            return {
+                ...this.PRODUCT,
+                image: this.PRODUCT.image && require(`../../assets/images/${this.PRODUCT.image}`)
+            }
+        },
     },
     methods: {
         ...mapActions([
