@@ -1,6 +1,6 @@
 <template>
   <div class="v-catalog-item">
-    <router-link :to="{ name: 'product', params: { id: product_data.id}}" target='_blank'>
+    <router-link :to="{ name: 'product', params: { id: product_data.id}}">
       <img 
         class="v-catalog-item__img" 
         :src="require(`../../assets/images/${product_data.image}`)" 

@@ -8,6 +8,7 @@ import vCart from '../components/cart/v-cart'
 Vue.use(Router);
 
 let router = new Router({
+    mode: "history",
     routes: [
         {
             path: '/',
