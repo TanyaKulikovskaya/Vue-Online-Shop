@@ -16,7 +16,7 @@
         @increment="increment(index)"
       />
       <div class="v-cart__total">
-          <p><b>Total:</b> $ {{ cartTotalCost }}</p>
+          <p><b>Total: </b>{{ cartTotalCost | currency }}</p>
       </div>
   </div>
   </template>
@@ -40,10 +40,7 @@ export default {
     },
     computed: {
         cartTotalCost() {
-            let result = [];
-            this.cart_data.map(item => result.push(item.price*item.quantity));
-            result = result.reduce((sum, el) => sum + el, 0)
-            return result;
+            return this.cart_data.map(item => (item.price*item.quantity)).reduce((sum, el) => sum + el, 0)
         }
     },
     methods: {

@@ -8,7 +8,7 @@
         <div class="v-product__info">
             <h2 class="v-product__name">{{ PRODUCT.name }}</h2>
             <p class="v-product__article">Article: {{ PRODUCT.id }}</p>
-            <p class="v-product__price">Price: $ {{ PRODUCT.price }}</p>
+            <p class="v-product__price">Price: {{ PRODUCT.price | currency }}</p>
             <button 
       class="v-catalog-item__add-to-cart-btn btn"
       @click="addToCart">
@@ -35,6 +35,7 @@ export default {
     components: {
         vCounterBadge
     },
+    
     computed: {
         ...mapGetters([
             'PRODUCT',
@@ -55,14 +56,14 @@ export default {
         ]),
         addToCart() {
             this.ADD_TO_CART(this.PRODUCT);
-            this.$set(this.PRODUCT, 'quantity', 1)
+            
         }
     },
     mounted() {
         this.GET_PRODUCT_FROM_API(this.$route.params.id)
             .then((response) => {
                 if(response.data) {
-                    console.log('Data arrived');
+                    this.$set(response.data, 'quantity', 1);
                 }
             })
     },
@@ -71,6 +72,11 @@ export default {
             handler() {
                 if(this.$route.params.id !== undefined) {
                     this.GET_PRODUCT_FROM_API(this.$route.params.id)
+                        .then((response) => {
+                            if(response.data) {
+                                this.$set(response.data, 'quantity', 1);
+                            }
+                        })
                 }
             }
         }
@@ -84,14 +90,19 @@ export default {
         padding: $padding*2 0;
         justify-content: space-between;
         &__img {
-            flex-basis: 40%;
+            flex: 0 0 360px;
             img {
                 max-width: 100%;
             }
         }
         &__info {
-            flex-basis: 50%;
+            flex: 1 0 auto;
+            padding: $padding*3 $padding*6;
             text-align: left;
+        }
+        &__name {
+            text-transform: uppercase;
+            font-size: 20px;
         }
     }
 </style>

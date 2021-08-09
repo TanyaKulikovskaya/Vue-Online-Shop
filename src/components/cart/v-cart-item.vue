@@ -5,8 +5,8 @@
         :src=" require(`../../assets/images/${cart_item_data.image}`)" 
         :alt="`Image of ${cart_item_data.name}`">
       <div class="v-cart-item__info">
-          <p><b>{{ cart_item_data.name }}</b></p>
-          <span>$ {{ cart_item_data.price }}</span>
+          <p><b>{{ cart_item_data.name | formattedTitle }}</b></p>
+          <span>{{ cart_item_data.price | currency }}</span>
           <span>Article: {{ cart_item_data.id }}</span>
       </div>
        <div class="v-cart-item__quantity">
