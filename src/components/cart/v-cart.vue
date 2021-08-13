@@ -1,14 +1,9 @@
 <template>
   <div class="v-cart">
-      <router-link :to="{name: 'catalog'}">
-          <div class="v-cart__link-to-catalog">
-            Back to catalog
-          </div>
-      </router-link>
       <h1>Cart</h1>
-      <p v-if="!cart_data.length">There are no products in cart</p>
+      <p v-if="!CART.length">There are no products in cart</p>
       <v-cart-item 
-        v-for="(item, index) in cart_data"
+        v-for="(item, index) in CART"
         :key="item.id"
         :cart_item_data="item"
         @deleteFromCart="deleteFromCart(index)"
@@ -23,24 +18,19 @@
 
 <script>
 import vCartItem from './v-cart-item.vue'
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
     name: "v-cart",
     components: {
         vCartItem
     },
-    props: {
-        cart_data: {
-            type: Array,
-            default() {
-                return []
-            }
-        }
-    },
     computed: {
+        ...mapGetters([
+            'CART',
+        ]),
         cartTotalCost() {
-            return this.cart_data.map(item => (item.price*item.quantity)).reduce((sum, el) => sum + el, 0)
+            return this.CART.map(item => (item.price*item.quantity)).reduce((sum, el) => sum + el, 0)
         }
     },
     methods: {
@@ -58,14 +48,14 @@ export default {
         increment(index) {
             this.INCREMENT_CART_ITEM(index);
         }
-    },
-
+    }
 }
 </script>
 
 <style lang="scss">
     .v-cart {
         margin-bottom: 80px;
+        position: relative;
         &__link-to-catalog {
             position: absolute;
             top: 10px;

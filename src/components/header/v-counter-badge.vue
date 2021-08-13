@@ -16,8 +16,8 @@ export default {
 <style>
     .v-counter-badge {
         position: absolute;
-        top: 3px;
-        right: -3px;
+        top: -12px;
+        right: -20px;
         height: 20px;
         width: 20px;
         border-radius: 50%;

@@ -8,28 +8,34 @@ export default { // setting and updating the state
     SET_CART: (state, product) => {
         if(state.cart.length) {
             let isProductExist = false;
-            state.cart.map(item => {
+            state.cart.find(item => {
                 if(item.id === product.id) {
                     isProductExist = true;
                     item.quantity++;
                 }
             });
             if(!isProductExist) {
-                state.cart.push(product);
+                state.cart.push({
+                    ...product,
+                    'quantity': 1
+                });
             }
         } else {
-            state.cart.push(product);
+            state.cart.push({
+                ...product,
+                'quantity': 1
+            });
         }
     },
     REMOVE_FROM_CART: (state, index) => {
         state.cart.splice(index, 1);
     },
-    DECREMENT: (state, index) => {
+    DECREMENT_CART: (state, index) => {
         if(state.cart[index].quantity > 1) {
             state.cart[index].quantity--
         }
     },
-    INCREMENT: (state, index) => {
-        state.cart[index].quantity++
+    INCREMENT_CART: (state, index) => {
+        state.cart[index].quantity++;
     }
 }

@@ -10,36 +10,23 @@
             <p class="v-product__article">Article: {{ PRODUCT.id }}</p>
             <p class="v-product__price">Price: {{ PRODUCT.price | currency }}</p>
             <button 
-      class="v-catalog-item__add-to-cart-btn btn"
-      @click="addToCart">
-      Add to cart
-    </button>   
+                class="v-product__add-to-cart-btn btn"
+                @click="addToCart">
+                Add to cart
+            </button>   
         </div>
-         <router-link :to="{name: 'cart', params: {cart_data: CART}}">
-            <div class="v-catalog__link-to-cart">
-                Cart 
-                    <v-counter-badge :count="CART.length" />
-            </div>
-        </router-link>
-       
      </div>
 </template>
 
 <script>
 
 import { mapGetters, mapActions } from 'vuex'
-import vCounterBadge from '../v-counter-badge.vue'
 
 export default {
     name: 'product',
-    components: {
-        vCounterBadge
-    },
-    
     computed: {
         ...mapGetters([
             'PRODUCT',
-            'CART'
         ]),
         productWithImage() {
             return {
@@ -47,7 +34,6 @@ export default {
                 image: this.PRODUCT.image && require(`../../assets/images/${this.PRODUCT.image}`)
             }
         },
-        
     },
     methods: {
         ...mapActions([
@@ -56,27 +42,16 @@ export default {
         ]),
         addToCart() {
             this.ADD_TO_CART(this.PRODUCT);
-            
         }
     },
-    mounted() {
+    created() {
         this.GET_PRODUCT_FROM_API(this.$route.params.id)
-            .then((response) => {
-                if(response.data) {
-                    this.$set(response.data, 'quantity', 1);
-                }
-            })
     },
     watch: {
         "$route.params.id": {
             handler() {
                 if(this.$route.params.id !== undefined) {
                     this.GET_PRODUCT_FROM_API(this.$route.params.id)
-                        .then((response) => {
-                            if(response.data) {
-                                this.$set(response.data, 'quantity', 1);
-                            }
-                        })
                 }
             }
         }
@@ -87,8 +62,8 @@ export default {
 <style lang="scss">
     .v-product {
         display: flex;
-        padding: $padding*2 0;
         justify-content: space-between;
+        position: relative;
         &__img {
             flex: 0 0 360px;
             img {
@@ -97,12 +72,24 @@ export default {
         }
         &__info {
             flex: 1 0 auto;
-            padding: $padding*3 $padding*6;
+            margin-left: $margin*5;
             text-align: left;
         }
         &__name {
             text-transform: uppercase;
             font-size: 20px;
+            margin-bottom: $margin*2;
+        }
+        &__article {
+            margin-bottom: $margin;
+        }
+        &__price {
+            margin-bottom: $margin*4;
+        }
+        &__link-to-cart {
+            position: absolute;
+            top: 0px;
+            right: 0px;
         }
     }
 </style>

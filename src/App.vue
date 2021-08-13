@@ -1,26 +1,31 @@
 <template>
   <div id="app">
-    <vMainWrapper />
+    <div class="wrapper">
+      <the-header />
+        <keep-alive>
+          <router-view></router-view>
+        </keep-alive>
+    </div>
   </div>
 </template>
 
 <script>
-import vMainWrapper from './components/v-main-wrapper'
+
+import TheHeader from './components/header/TheHeader.vue'
 
 export default {
     name: 'App',
     components: {
-        vMainWrapper,
+        TheHeader,
     }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #131313;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #131313;
 }
 </style>

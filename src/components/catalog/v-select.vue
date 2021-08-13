@@ -63,6 +63,8 @@ export default {
     .v-select {
         position: relative;
         width: 180px;
+        height: 36px;
+        line-height: 36px;
         border: 1px solid #e0e0e0;
         border-radius: $radius;
         margin-bottom: $margin*4;
@@ -72,6 +74,7 @@ export default {
             font-weight: 700;
             display: flex;
             justify-content: center;
+            padding-right: $padding;
         }
         &__options {
             position: absolute;
@@ -83,6 +86,18 @@ export default {
             border-radius: $radius;
             background: #ffffff;
             font-size: 14px;
+        }
+        &::after {
+            content: "\25BC";
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 0 $padding;
+            max-height: 100%;
+            border-radius: $radius;
+            background: #e0e0e0;
+            cursor: pointer;
+            pointer-events: none;
         }
     }
 

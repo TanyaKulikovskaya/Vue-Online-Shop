@@ -6,9 +6,9 @@ export default { // actions = methods
         commit('REMOVE_FROM_CART', index);
     },
     DECREMENT_CART_ITEM({commit}, index) {
-        commit('DECREMENT', index)
+        commit('DECREMENT_CART', index)
     },
     INCREMENT_CART_ITEM({commit}, index) {
-        commit('INCREMENT', index)
+        commit('INCREMENT_CART', index);
     }   
 }

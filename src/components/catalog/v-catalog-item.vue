@@ -1,19 +1,24 @@
 <template>
-  <div class="v-catalog-item">
+  <li class="v-catalog-item">
     <router-link :to="{ name: 'product', params: { id: product_data.id}}">
       <img 
         class="v-catalog-item__img" 
         :src="require(`../../assets/images/${product_data.image}`)" 
         :alt="`Image of ${product_data.name}`">
-      <p class="v-catalog-item__name">{{ product_data.name | formattedTitle }}</p>
-      <p class="v-catalog-item__price">{{ product_data.price | currency}}</p>
+      <div class="v-catalog-item__description">
+        <h2 class="v-catalog-item__name">{{ product_data.name | formattedTitle }}</h2>
+        <p class="v-catalog-item__price">{{ product_data.price | currency}}</p>
+      </div>
     </router-link>
-    <button 
-      class="v-catalog-item__add-to-cart-btn btn"
-      @click="addToCart">
-      Add to cart
-    </button>    
-  </div>
+    <div class="v-catalog-item__footer">
+       <button 
+          class="v-catalog-item__add-to-cart-btn btn"
+          @click.stop="addToCart">
+          Add to cart
+      </button>   
+    </div>
+     
+  </li>
 </template>
 
 <script>
@@ -29,26 +34,43 @@ export default {
     },
     methods: {
         addToCart() {
-            this.$emit('addToCart', this.product_data)
+            this.$emit('addToCart', this.product_data);
         }
-    },
-    mounted() {
-        this.$set(this.product_data, 'quantity', 1)
     }
 }
 </script>
 
 <style lang="scss">
     .v-catalog-item {
+        max-width: fit-content;
+        display: flex;
+        flex-direction: column;
         box-shadow: 0 0 8px 0 #e0e0e0;
-        padding: $padding*2;
+        padding: $padding $padding $padding*2 $padding;
         &__img {
-          width: 100%;
-          max-height: 290px;
-          object-fit: cover;
+          max-width: 100%;
+          margin-bottom: $margin;
+        }
+        &__description {
+            flex: 1 0 auto;
         }
         &__name {
+          font-size: 1rem;
+          font-weight: 400;
+          height: 2rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 8;
+          -webkit-box-orient: vertical;
+          margin-bottom: $margin;
+        }
+        &__price {
           font-weight: 700;
+          margin-bottom: $margin
+        }
+        &__footer {
+          margin-top: auto;
         }
     }
 </style>

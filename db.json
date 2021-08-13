@@ -5,39 +5,34 @@
         "name": "teak & velvet lounger",
         "price": 1110.99,
         "id": "1",
-        "available": true,
         "category": "Furniture"
       },
       {
         "image": "2.jpg",
-        "name": "terazzo vase",
-        "price": 115.99,
+        "name": "velvet sofa",
+        "price": 2115.99,
         "id": "2",
-        "available": true,
-        "category": "Decor"
-      },
-      {
-        "image": "3.jpg",
-        "name": "rattan & teak lounger",
-        "price": 320.9,
-        "id": "3",
-        "available": true,
         "category": "Furniture"
       },
       {
+        "image": "3.jpg",
+        "name": "terasso vase",
+        "price": 220,
+        "id": "3",
+        "category": "Decor"
+      },
+      {
         "image": "4.jpg",
-        "name": "teak storage",
+        "name": "velvet chaise lounger",
         "price": 1530.9900,
         "id": "4",
-        "available": true,
         "category": "Furniture"
       },
       {
         "image": "5.jpg",
         "name": "allegra vase",
-        "price": 1150.99,
+        "price": 310.9,
         "id": "5",
-        "available": true,
         "category": "Decor"
       },
       {
@@ -45,7 +40,20 @@
         "name": "solid teak dining set",
         "price": 2670.990,
         "id": "6",
-        "available": true,
+        "category": "Furniture"
+      },
+      {
+        "image": "7.jpg",
+        "name": "wall mirror",
+        "price": 530.9900,
+        "id": "7",
+        "category": "Decor"
+      },
+      {
+        "image": "8.jpg",
+        "name": "armless lounge",
+        "price": 1950.99,
+        "id": "8",
         "category": "Furniture"
       }
     ]

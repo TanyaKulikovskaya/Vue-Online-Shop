@@ -1,5 +1,6 @@
 import Vue from "vue"
 import Vuex from "vuex"
+import createPersistedState from "vuex-persistedstate"
 
 import commonActions from './actions/actions'
 import apiRequests from "./actions/api-requests"
@@ -19,6 +20,7 @@ let store = new Vuex.Store({
     mutations,
     actions,
     getters,
+    plugins: [createPersistedState()]
 });
 
 export default store;
