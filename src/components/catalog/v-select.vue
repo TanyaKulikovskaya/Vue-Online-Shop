@@ -65,7 +65,7 @@ export default {
         width: 180px;
         height: 36px;
         line-height: 36px;
-        border: 1px solid #e0e0e0;
+        border: $border;
         border-radius: $radius;
         margin-bottom: $margin*4;
         cursor: pointer;
@@ -82,10 +82,13 @@ export default {
             width: 100%;
             top: 100%;
             left: 0;
-            border: 1px solid #e0e0e0;
+            border: $border;
             border-radius: $radius;
-            background: #ffffff;
+            background-color: $white;
             font-size: 14px;
+            p:hover {
+                background-color: $light-gray;
+            }
         }
         &::after {
             content: "\25BC";
@@ -95,7 +98,7 @@ export default {
             padding: 0 $padding;
             max-height: 100%;
             border-radius: $radius;
-            background: #e0e0e0;
+            background-color: $light-gray;
             cursor: pointer;
             pointer-events: none;
         }

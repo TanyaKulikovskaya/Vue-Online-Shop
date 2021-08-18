@@ -62,18 +62,31 @@ export default {
 <style lang="scss">
     .v-product {
         display: flex;
-        justify-content: space-between;
-        position: relative;
+        flex-wrap: wrap;
+        padding-top: $padding*2;
         &__img {
-            flex: 0 0 360px;
+            flex: 0 0 40%;
+            box-shadow: $box-shadow;
             img {
                 max-width: 100%;
+                height: 100%;
+            }
+        }
+        @media screen and (max-width: 639px) {
+            &__img {
+                flex: 0 0 100%;
             }
         }
         &__info {
-            flex: 1 0 auto;
-            margin-left: $margin*5;
+            flex: 0 0 60%;
+            padding: $padding*2 $padding*4;
             text-align: left;
+        }
+        @media screen and (max-width: 639px) {
+            &__info {
+                flex: 0 0 100%;
+                padding: $padding*2 0;
+            }
         }
         &__name {
             text-transform: uppercase;
@@ -86,10 +99,13 @@ export default {
         &__price {
             margin-bottom: $margin*4;
         }
-        &__link-to-cart {
-            position: absolute;
-            top: 0px;
-            right: 0px;
+        &__add-to-cart-btn {
+            background-color: $main-font-color;
+            color: $white;
+            &:hover {
+                background-color: $light-gray;
+                color: $black;
+            }
         }
     }
 </style>

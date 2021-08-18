@@ -1,32 +1,33 @@
 <template>
   <div class="v-cart-item">
-      <img 
-        class="v-cart-item__img" 
-        :src=" require(`../../assets/images/${cart_item_data.image}`)" 
-        :alt="`Image of ${cart_item_data.name}`">
+      <router-link :to="{ name: 'product', params: { id: cart_item_data.id}}">
+        <img 
+            class="v-cart-item__img" 
+            :src=" require(`../../assets/images/${cart_item_data.image}`)" 
+            :alt="`Image of ${cart_item_data.name}`">
+      </router-link>
       <div class="v-cart-item__info">
           <p><b>{{ cart_item_data.name | formattedTitle }}</b></p>
           <span>{{ cart_item_data.price | currency }}</span>
           <span>Article: {{ cart_item_data.id }}</span>
       </div>
+      
        <div class="v-cart-item__quantity">
           <p>Quantity:</p> 
-          <span>
-              <span 
-                class="quantity-btn" 
-                @click="decrementItem">
-                -
-                </span>
-                    {{ cart_item_data.quantity }}
-               <span 
-                class="quantity-btn" 
-                @click="incrementItem">
-                +
-               </span>
-          </span>
+          <span 
+            class="quantity-btn" 
+            @click="decrementItem">
+            -
+            </span>
+            <span>{{ cart_item_data.quantity }}</span>
+            <span 
+              class="quantity-btn" 
+              @click="incrementItem">
+              +
+            </span>
        </div>
       <button
-        class="btn"
+        class="v-cart-item__delete-from-cart-btn btn"
         @click="deleteFromCart">
         Delete
       </button>
@@ -63,10 +64,11 @@ export default {
     .v-cart-item {
         display: flex;
         align-items: center;
-        box-shadow: 0 0 8px 0 #e0e0e0;
+        border-bottom: $border;
         padding: $padding*2;
         margin-bottom: $margin*2;
-        &__img{
+        background-color: $white;
+        &__img {
             max-width: 90px;
         }
         &__info {
@@ -77,8 +79,35 @@ export default {
         &__quantity {
             flex-basis: 30%;
         }
-        .quantity-btn{
+        .quantity-btn {
             cursor: pointer;
+        }
+        &__delete-from-cart-btn {
+            background-color: $light-gray;
+            &:hover {
+                background-color: $gray;
+                color: $white;
+            }
+        }
+    }
+    @media screen and (max-width: 639px) {
+        .v-cart-item {
+            flex-direction: column;
+            &__img {
+                max-width: 180px;
+                margin-bottom: $margin;
+            }
+            &__info {
+                flex-basis: 100%;
+                margin-bottom: $margin*2;
+            }
+            &__quantity {
+                flex-basis: 100%;
+                margin-bottom: $margin*2;
+                span {
+                    font-size: 20px;
+                }
+            }
         }
     }
 </style>

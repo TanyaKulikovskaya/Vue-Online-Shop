@@ -1,4 +1,5 @@
 @import '../../../node_modules/normalize-scss/sass/normalize/';
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
 @import 'variables.scss';
 @include normalize();
 
@@ -11,12 +12,24 @@
 }
 
 body {
-    font-family: Verdana, Tahoma, Arial, sans-serif;
+    font-family: 'Exo 2', Arial, sans-serif;
+    background-color: $main-bg-color;
+    color: $main-font-color;
 }
 
 a {
     color: inherit;
     text-decoration: none;
+}
+
+a,
+button {
+    transition-duration: .2s;
+}
+
+a:hover,
+button:hover {
+    transition-duration: .3s;
 }
 
 ul li {
@@ -31,5 +44,7 @@ ul li {
 }
 
 .btn {
+    border: none;
     padding: $padding $padding*3;
+    min-width: 130px;
 }

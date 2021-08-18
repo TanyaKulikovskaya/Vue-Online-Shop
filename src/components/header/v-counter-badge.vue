@@ -13,7 +13,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
     .v-counter-badge {
         position: absolute;
         top: -12px;
@@ -21,7 +21,7 @@ export default {
         height: 20px;
         width: 20px;
         border-radius: 50%;
-        background-color: #e0e0e0;
+        background-color: $yellow;
         font-weight: 500;
         font-size: 12px;
         line-height: 20px;

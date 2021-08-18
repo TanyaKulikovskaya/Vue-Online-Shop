@@ -56,19 +56,13 @@ export default {
     .v-cart {
         margin-bottom: 80px;
         position: relative;
-        &__link-to-catalog {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            padding: $padding*2;
-        }
         &__total {
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
             padding: $padding*2 $padding*3;
-            background-color: #e0e0e0;
+            background-color: $gray;
             font-size: 28px;
         }
     }

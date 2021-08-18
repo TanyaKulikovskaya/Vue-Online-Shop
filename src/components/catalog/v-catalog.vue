@@ -1,6 +1,6 @@
 <template>
     <div class="v-catalog">
-        <h1 class="v-catalog_title">Catalog</h1>
+        <h1 class="v-catalog__title">Catalog</h1>
         <v-select 
             :options="categories"
             :selected="selected"
@@ -82,7 +82,8 @@ export default {
     .v-catalog {
         position: relative;
         &__title {
-            text-align: left;
+            padding-top: $padding*2;
+            margin: 0 0 $margin*2;
         }
         &__list {
             display: grid;

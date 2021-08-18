@@ -2,13 +2,13 @@
     <header class="v-header">
         <router-link to="/">
             <div class="v-header__logo">
-                LOGO
+                FUNIRO
             </div>
         </router-link>
          <router-link :to="{ name: 'cart' }">
             <div class="v-header__link-to-cart">
-                Cart 
-                    <v-counter-badge :count="CART.length" />
+                <p>Cart</p> 
+                <v-counter-badge :count="CART.length" />
             </div>
         </router-link>
     </header>
@@ -36,9 +36,18 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: $padding*3 0;
+        padding: $padding*3 $padding;
+        border-bottom: $border;
+        &__logo {
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
         &__link-to-cart {
             position: relative;
+        }
+        a:hover {
+            color: $black;
+            font-weight: 500;
         }
     }
 </style>
