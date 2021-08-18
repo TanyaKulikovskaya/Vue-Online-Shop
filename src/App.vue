@@ -5,7 +5,7 @@
         <keep-alive>
           <router-view></router-view>
         </keep-alive>
-    </div>
+      </div>
   </div>
 </template>
 
@@ -13,10 +13,11 @@
 
 import TheHeader from './components/header/TheHeader.vue'
 
+
 export default {
     name: 'App',
     components: {
-        TheHeader,
+        TheHeader
     }
 }
 </script>
