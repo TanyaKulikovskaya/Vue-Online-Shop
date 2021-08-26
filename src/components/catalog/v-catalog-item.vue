@@ -1,13 +1,13 @@
 <template>
   <li class="v-catalog-item">
     <router-link :to="{ name: 'product', params: { id: product_data.id}}">
-      <img 
-        class="v-catalog-item__img" 
-        :src="require(`../../assets/images/${product_data.image}`)" 
-        :alt="`Image of ${product_data.name}`">
-        <h2 class="v-catalog-item__name">{{ product_data.name | formattedTitle }}</h2>
-        <p class="v-catalog-item__price">{{ product_data.price | currency}}</p>
-      </router-link>
+      <img class="v-catalog-item__img"        
+          :src="require(`../../assets/images/${product_data.image}`)" 
+          :alt="`Image of ${product_data.name}`"
+        >
+      <h2 class="v-catalog-item__name">{{ product_data.name | formattedTitle }}</h2>
+      <p class="v-catalog-item__price">{{ product_data.price | currency}}</p>
+    </router-link>
    </li>
 </template>
 
@@ -37,8 +37,9 @@ export default {
         border: $border;
         background-color: $white;
         &__img {
-          flex: 0 0 auto;
-          max-width: 100%;
+          max-width: 300px;
+          width: 100%;
+          height: auto;
           margin-bottom: $margin;
         }
         &__name {

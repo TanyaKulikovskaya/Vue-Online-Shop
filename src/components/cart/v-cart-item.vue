@@ -4,7 +4,8 @@
         <img 
             class="v-cart-item__img" 
             :src=" require(`../../assets/images/${cart_item_data.image}`)" 
-            :alt="`Image of ${cart_item_data.name}`">
+            :alt="`Image of ${cart_item_data.name}`"
+        >
       </router-link>
       <div class="v-cart-item__info">
           <p><b>{{ cart_item_data.name | formattedTitle }}</b></p>
@@ -16,19 +17,22 @@
           <p>Quantity:</p> 
           <span 
             class="quantity-btn" 
-            @click="decrementItem">
+            @click="decrementItem"
+          >
             -
-            </span>
-            <span>{{ cart_item_data.quantity }}</span>
-            <span 
-              class="quantity-btn" 
-              @click="incrementItem">
-              +
-            </span>
+          </span>
+          <span>{{ cart_item_data.quantity }}</span>
+          <span 
+            class="quantity-btn" 
+            @click="incrementItem"
+          >
+            +
+          </span>
        </div>
       <button
         class="v-cart-item__delete-from-cart-btn btn"
-        @click="deleteFromCart">
+        @click.prevent="deleteFromCart"
+      >
         Delete
       </button>
   </div>

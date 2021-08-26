@@ -1,9 +1,9 @@
 <template>
     <header class="v-header">
         <router-link to="/">
-            <div class="v-header__logo">
+            <p class="v-header__logo">
                 FUNIRO
-            </div>
+            </p>
         </router-link>
          <router-link :to="{ name: 'cart' }">
             <div class="v-header__link-to-cart">

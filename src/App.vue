@@ -2,7 +2,7 @@
   <div id="app">
     <div class="wrapper">
       <the-header />
-        <keep-alive>
+        <keep-alive :exclude="['vProduct']">
           <router-view></router-view>
         </keep-alive>
       </div>

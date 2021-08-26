@@ -3,18 +3,19 @@
       <p
         class="v-select__title"
         @click="areOptionsVisible = !areOptionsVisible"
-      >
-      {{ selected }}
+        >
+        {{ selected }}
       </p>
       <div 
         class="v-select__options"
-        v-if="areOptionsVisible">
+        v-if="areOptionsVisible"
+        >
           <p
             v-for="option in options"
             :key="option.value"
             @click="selectOption(option)"
-          >
-          {{ option.name }}
+            >
+            {{ option.name }}
           </p>
       </div>
   </div>

@@ -1,21 +1,23 @@
 <template>
-    <div class="v-product">
-        <div class="v-product__img">
-            <img 
-                :src="productWithImage.image" 
-                :alt="`Image of ${PRODUCT.name}`">
-        </div>
-        <div class="v-product__info">
-            <h2 class="v-product__name">{{ PRODUCT.name }}</h2>
-            <p class="v-product__article">Article: {{ PRODUCT.id }}</p>
-            <p class="v-product__price">Price: {{ PRODUCT.price | currency }}</p>
-            <button 
-                class="v-product__add-to-cart-btn btn"
-                @click="addToCart">
-                Add to cart
-            </button>   
-        </div>
-    </div>
+    <div v-if="!loadingProduct" class="v-product">
+            <div class="v-product__img">
+                <img 
+                    :src="productWithImage.image" 
+                    :alt="`Image of ${PRODUCT.name}`"
+                >
+            </div>
+            <div class="v-product__info">
+                <h2 class="v-product__name">{{ PRODUCT.name }}</h2>
+                <p class="v-product__article">Article: {{ PRODUCT.id }}</p>
+                <p class="v-product__price">Price: {{ PRODUCT.price | currency }}</p>
+                <button 
+                    class="v-product__add-to-cart-btn btn"
+                    @click.prevent="addToCart"
+                >
+                    Add to cart
+                </button>   
+            </div>
+       </div>       
 </template>
 
 <script>
@@ -24,6 +26,11 @@ import { mapGetters, mapActions } from 'vuex'
 
 export default {
     name: 'product',
+    data() {
+        return {
+            loadingProduct: false
+        }
+    },
     computed: {
         ...mapGetters([
             'PRODUCT',
@@ -42,16 +49,20 @@ export default {
         ]),
         addToCart() {
             this.ADD_TO_CART(this.PRODUCT);
+        },
+        loadProduct() {
+            this.loadingProduct = true;
+            this.GET_PRODUCT_FROM_API(this.$route.params.id).then(() => this.loadingProduct = false)
         }
     },
     created() {
-        this.GET_PRODUCT_FROM_API(this.$route.params.id)
+        this.loadProduct();
     },
     watch: {
         "$route.params.id": {
             handler() {
                 if(this.$route.params.id !== undefined) {
-                    this.GET_PRODUCT_FROM_API(this.$route.params.id)
+                    this.loadProduct();
                 }
             }
         }
@@ -69,7 +80,8 @@ export default {
             box-shadow: $box-shadow;
             img {
                 max-width: 100%;
-                height: 100%;
+                height: auto;
+                display: block;
             }
         }
         @media screen and (max-width: 639px) {
