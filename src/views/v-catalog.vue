@@ -1,7 +1,7 @@
 <template>
-    <div class="v-catalog">
+    <main class="v-catalog">
         <h1 class="v-catalog__title">Catalog</h1>
-        <v-select 
+        <v-catalog-select 
             :options="categories"
             :selected="selected"
             @select="sortByCategories"
@@ -14,20 +14,19 @@
                 @addToCart="addToCart"
             />
         </transition-group>
-    </div>
+    </main>
 </template>
 
 <script>
-import vCatalogItem from './v-catalog-item.vue'
 import { mapActions, mapGetters } from 'vuex'
-import vSelect from './v-select.vue'
-
+import vCatalogItem from '../components/catalog/v-catalog-item.vue'
+import vCatalogSelect from '../components/catalog/v-catalog-select.vue'
 
 export default {
     name: "v-catalog",
     components: {
         vCatalogItem,
-        vSelect
+        vCatalogSelect
     },
     data() {
         return {

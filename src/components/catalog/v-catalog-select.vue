@@ -1,13 +1,13 @@
 <template>
-  <div class="v-select">
+  <div class="v-catalog-select">
       <p
-        class="v-select__title"
+        class="v-catalog-select__title"
         @click="areOptionsVisible = !areOptionsVisible"
         >
         {{ selected }}
       </p>
       <div 
-        class="v-select__options"
+        class="v-catalog-select__options"
         v-if="areOptionsVisible"
         >
           <p
@@ -23,7 +23,7 @@
 
 <script>
 export default {
-    name: "v-select",
+    name: "v-catalog-select",
     props: {
         options: {
             type: Array,
@@ -61,7 +61,7 @@ export default {
 </script>
 
 <style lang="scss">
-    .v-select {
+    .v-catalog-select {
         position: relative;
         width: 180px;
         height: 36px;

@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-const vCatalog = () => import('../components/catalog/v-catalog')
-const vProduct = () => import('../components/product/v-product')
+const vCatalog = () => import('../views/v-catalog')
+const vProduct = () => import('../views/v-product')
 const vCart = () => import('../views/v-cart')
 
 Vue.use(Router);

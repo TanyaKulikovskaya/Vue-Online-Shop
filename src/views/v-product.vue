@@ -1,5 +1,9 @@
 <template>
-    <div v-if="!loadingProduct" class="v-product">
+    <main v-if="!loadingProduct" class="v-product">
+        <div class="v-product__header">
+            <v-go-back />
+        </div>
+        <div class="v-product__body">
             <div class="v-product__img">
                 <img 
                     :src="productWithImage.image" 
@@ -16,16 +20,20 @@
                 >
                     Add to cart
                 </button>   
-            </div>
-       </div>       
+            </div>     
+        </div>
+    </main>       
 </template>
 
 <script>
-
+import vGoBack from '../components/v-go-back.vue'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
     name: 'product',
+    components: {
+        vGoBack
+    },
     data() {
         return {
             loadingProduct: false
@@ -38,7 +46,7 @@ export default {
         productWithImage() {
             return {
                 ...this.PRODUCT,
-                image: this.PRODUCT.image && require(`../../assets/images/${this.PRODUCT.image}`)
+                image: this.PRODUCT.image && require(`../assets/images/${this.PRODUCT.image}`)
             }
         },
     },
@@ -72,9 +80,22 @@ export default {
 
 <style lang="scss">
     .v-product {
-        display: flex;
-        flex-wrap: wrap;
-        padding-top: $padding*2;
+        &__header {
+            position: relative;
+            min-height: 40px;
+        }
+        &__body {
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: $padding*2;
+            padding-bottom: $padding*2;
+        }
+        @media screen and (max-width: 639px) {
+            &__body {
+                padding-left: $padding*2;
+                padding-right: $padding*2;
+            }
+        }
         &__img {
             flex: 0 0 40%;
             box-shadow: $box-shadow;

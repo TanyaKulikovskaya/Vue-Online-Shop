@@ -1,7 +1,7 @@
 <template>
     <a 
       class="v-go-back"
-      @click="goBack"
+      @click.stop.prevent="goBack"
       >
         <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M16.4 5.65714V7.54286H4.70005L8.60005 11.3143L7.62505 13.2L0.800049 6.6L7.62505 0L8.60005 1.88571L4.70005 5.65714H16.4Z" fill="white"/>

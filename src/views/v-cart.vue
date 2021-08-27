@@ -1,5 +1,5 @@
 <template>
-  <div class="v-cart">
+  <main class="v-cart">
       <div class="v-cart__header">
           <v-go-back />
           <h1>Cart</h1>
@@ -29,7 +29,7 @@
             <span class="v-cart__link">Shop now</span>
           </router-link>
       </div>
-  </div>
+  </main>
 </template>
 
 <script>
