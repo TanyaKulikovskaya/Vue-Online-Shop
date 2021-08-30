@@ -1,13 +1,13 @@
 <template>
-  <div class="v-catalog-select">
+  <div class="catalog-select">
       <p
-        class="v-catalog-select__title"
+        class="catalog-select__title"
         @click="areOptionsVisible = !areOptionsVisible"
         >
         {{ selected }}
       </p>
       <div 
-        class="v-catalog-select__options"
+        class="catalog-select__options"
         v-if="areOptionsVisible"
         >
           <p
@@ -23,7 +23,7 @@
 
 <script>
 export default {
-    name: "v-catalog-select",
+    name: "catalog-select",
     props: {
         options: {
             type: Array,
@@ -51,17 +51,17 @@ export default {
         }
     }, 
     mounted() {
-        document.addEventListener('click', this.hideSelect.bind(this), true)
+        document.addEventListener('click', this.hideSelect.bind(this), true);
     },
     beforeDestroy() {
-        document.removeEventListener('click'. this.hideSelect())
+        document.removeEventListener('click'. this.hideSelect());
     }
 
 }
 </script>
 
 <style lang="scss">
-    .v-catalog-select {
+    .catalog-select {
         position: relative;
         width: 180px;
         height: 36px;

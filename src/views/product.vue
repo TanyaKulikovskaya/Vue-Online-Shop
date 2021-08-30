@@ -1,38 +1,69 @@
 <template>
-    <main v-if="!loadingProduct" class="v-product">
-        <div class="v-product__header">
-            <v-go-back />
+    <main if="!loadingProduct" class="product">
+        <div class="product__header">
+            <go-back />
         </div>
-        <div class="v-product__body">
-            <div class="v-product__img">
+        <div class="product__body">
+            <div class="product__img">
                 <img 
                     :src="productWithImage.image" 
                     :alt="`Image of ${PRODUCT.name}`"
                 >
             </div>
-            <div class="v-product__info">
-                <h2 class="v-product__name">{{ PRODUCT.name }}</h2>
-                <p class="v-product__article">Article: {{ PRODUCT.id }}</p>
-                <p class="v-product__price">Price: {{ PRODUCT.price | currency }}</p>
+            <div class="product__info">
+                <h2 class="product__name">{{ PRODUCT.name }}</h2>
+                <p class="product__article">Article: {{ PRODUCT.id }}</p>
+                <p class="product__price">Price: {{ PRODUCT.price | currency }}</p>
                 <button 
-                    class="v-product__add-to-cart-btn btn"
+                    class="product__add-to-cart-btn btn"
                     @click.prevent="addToCart"
                 >
                     Add to cart
-                </button>   
-            </div>     
+                </button>
+            </div> 
         </div>
+        <product-tabs>
+                <product-tab
+                    :selected="true"
+                    label="DESCRIPTION"
+                    >
+                    {{ PRODUCT.description }}
+                </product-tab>
+                <product-tab label="DIMENSIONS">
+                    <ul>
+                        <li 
+                            v-for="dimension in PRODUCT.dimensions"
+                            :key="dimension.id"
+                            class="product-tabs__item"
+                            >
+                            <dt>{{ dimension.name }} ({{ dimension.unit }}) : </dt>
+                            <dd>{{ dimension.value }}</dd>
+                        </li>
+                    </ul>
+                </product-tab>
+                <product-tab label="WARRANTY">
+                    <p>We provide a {{ PRODUCT.warranty }} year warranty.</p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere rem eius cum eaque omnis reprehenderit quibusdam quod quasi sequi error nesciunt odit quidem, sapiente qui fuga impedit voluptas provident alias?
+                        Hic minima, sint in soluta ratione ducimus. Iure quaerat nostrum provident voluptas perspiciatis, consequuntur at totam tempora nam velit, quibusdam iusto placeat. Quas eos fuga eveniet veniam laborum corrupti sed.
+                    </p>
+                </product-tab>
+        </product-tabs>
     </main>       
 </template>
 
 <script>
-import vGoBack from '../components/v-go-back.vue'
+import GoBack from '../components/go-back.vue'
+import ProductTabs from '../components/product/product-tabs.vue'
+import ProductTab from '../components/product/product-tab.vue'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
     name: 'product',
     components: {
-        vGoBack
+        GoBack,
+        ProductTabs,
+        ProductTab
     },
     data() {
         return {
@@ -49,6 +80,9 @@ export default {
                 image: this.PRODUCT.image && require(`../assets/images/${this.PRODUCT.image}`)
             }
         },
+        delivery() {
+            return this.PRODUCT.price > 1000 ? 'FREE DELIVERY' : '100'
+        }
     },
     methods: {
         ...mapActions([
@@ -79,7 +113,7 @@ export default {
 </script>
 
 <style lang="scss">
-    .v-product {
+    .product {
         &__header {
             position: relative;
             min-height: 40px;
@@ -140,5 +174,18 @@ export default {
                 color: $black;
             }
         }
+        .product-tabs__item {
+            display: flex;
+            max-width: 300px;
+            width: 100%;
+            dt,
+            dd {
+                width: 50%;
+            }
+            &:not(:last-child) {
+                margin-bottom: $margin;
+            }
+        }
+
     }
 </style>

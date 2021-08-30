@@ -1,27 +1,27 @@
 <template>
-    <header class="v-header">
+    <header class="header">
         <router-link to="/">
-            <p class="v-header__logo">
+            <p class="header__logo">
                 FUNIRO
             </p>
         </router-link>
          <router-link :to="{ name: 'cart' }">
-            <div class="v-header__link-to-cart">
+            <div class="header__link-to-cart">
                 <p>Cart</p> 
-                <v-counter-badge :count="CART.length" />
+                <the-header-cart-counter-badge :count="CART.length" />
             </div>
         </router-link>
     </header>
 </template>
 
 <script>
-import vCounterBadge from './v-counter-badge.vue'
+import TheHeaderCartCounterBadge from './the-header-cart-counter-badge'
 import { mapGetters } from 'vuex'
 
 export default {
     name: "the-header",
     components: {
-        vCounterBadge,
+        TheHeaderCartCounterBadge,
     },
     computed: {
         ...mapGetters([
@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style lang="scss">
-    .v-header{
+    .header{
         display: flex;
         justify-content: space-between;
         align-items: center;

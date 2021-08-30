@@ -1,13 +1,13 @@
 <template>
-    <main class="v-catalog">
-        <h1 class="v-catalog__title">Catalog</h1>
-        <v-catalog-select 
+    <main class="catalog">
+        <h1 class="catalog__title">Catalog</h1>
+        <catalog-select 
             :options="categories"
             :selected="selected"
             @select="sortByCategories"
         />
-        <transition-group tag="ul" class="v-catalog__list" name="list">
-            <v-catalog-item 
+        <transition-group tag="ul" class="catalog__list" name="list">
+            <catalog-item 
                 v-for="product in filteredProducts"
                 :key="product.id"
                 :product_data="product"
@@ -19,14 +19,14 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import vCatalogItem from '../components/catalog/v-catalog-item.vue'
-import vCatalogSelect from '../components/catalog/v-catalog-select.vue'
+import CatalogItem from '../components/catalog/catalog-item.vue'
+import CatalogSelect from '../components/catalog/catalog-select.vue'
 
 export default {
-    name: "v-catalog",
+    name: "catalog",
     components: {
-        vCatalogItem,
-        vCatalogSelect
+        CatalogItem,
+        CatalogSelect
     },
     data() {
         return {
@@ -72,13 +72,13 @@ export default {
 
     },
     created() {
-        this.GET_PRODUCTS_FROM_API()
+        this.GET_PRODUCTS_FROM_API();
     }
 }
 </script>
 
 <style lang="scss">
-    .v-catalog {
+    .catalog {
         position: relative;
         &__title {
             padding-top: $padding*2;

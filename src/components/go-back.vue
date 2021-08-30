@@ -15,7 +15,7 @@ export default {
     name: 'v-go-back',
     methods: {
         goBack() {
-            window.history.length > 1 ? this.$router.go(-1) : this.$router.push('/')
+            window.history.length > 1 ? this.$router.go(-1) : this.$router.push('/');
         }
     }
 }

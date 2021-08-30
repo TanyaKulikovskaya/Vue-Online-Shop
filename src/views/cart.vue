@@ -1,16 +1,16 @@
 <template>
-  <main class="v-cart">
-      <div class="v-cart__header">
-          <v-go-back />
+  <main class="cart">
+      <div class="cart__header">
+          <go-back />
           <h1>Cart</h1>
       </div>
       <p 
-        class="v-cart__label"
+        class="cart__label"
         v-if="!CART.length"
       >
         There are no products in cart
       </p>
-      <v-cart-item 
+      <cart-item 
         v-for="(item, index) in CART"
         :key="item.id"
         :cart_item_data="item"
@@ -20,28 +20,28 @@
         />
       <div>
           <p 
-            class="v-cart__total"
+            class="cart__total"
             v-if="CART.length"
             >
               <b>Total: </b>{{ cartTotalCost | currency }}
           </p>
           <router-link v-else to="/">
-            <span class="v-cart__link">Shop now</span>
+            <span class="cart__link">Shop now</span>
           </router-link>
       </div>
   </main>
 </template>
 
 <script>
-import vCartItem from '../components/cart/v-cart-item.vue'
-import vGoBack from '../components/v-go-back.vue'
+import CartItem from '../components/cart/cart-item.vue'
+import GoBack from '../components/go-back.vue'
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
-    name: "v-cart",
+    name: "cart",
     components: {
-        vCartItem,
-        vGoBack
+        CartItem,
+        GoBack
     },
     computed: {
         ...mapGetters([
@@ -71,7 +71,7 @@ export default {
 </script>
 
 <style lang="scss">
-    .v-cart {
+    .cart {
         &__header {
             position: relative;
         }

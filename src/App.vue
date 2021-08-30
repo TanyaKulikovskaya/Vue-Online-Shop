@@ -2,7 +2,7 @@
   <div id="app">
     <div class="wrapper">
       <the-header />
-        <keep-alive :exclude="['vProduct']">
+        <keep-alive :exclude="['product']">
           <router-view></router-view>
         </keep-alive>
       </div>
@@ -11,7 +11,7 @@
 
 <script>
 
-import TheHeader from './components/header/TheHeader.vue'
+import TheHeader from './components/header/the-header.vue'
 
 export default {
     name: 'App',

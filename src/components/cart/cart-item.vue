@@ -1,19 +1,19 @@
 <template>
-  <div class="v-cart-item">
+  <div class="cart-item">
       <router-link :to="{ name: 'product', params: { id: cart_item_data.id}}">
         <img 
-            class="v-cart-item__img" 
+            class="cart-item__img" 
             :src=" require(`../../assets/images/${cart_item_data.image}`)" 
             :alt="`Image of ${cart_item_data.name}`"
         >
       </router-link>
-      <div class="v-cart-item__info">
+      <div class="cart-item__info">
           <p><b>{{ cart_item_data.name | formattedTitle }}</b></p>
           <span>{{ cart_item_data.price | currency }}</span>
           <span>Article: {{ cart_item_data.id }}</span>
       </div>
       
-       <div class="v-cart-item__quantity">
+       <div class="cart-item__quantity">
           <p>Quantity:</p> 
           <span 
             class="quantity-btn" 
@@ -30,7 +30,7 @@
           </span>
        </div>
       <button
-        class="v-cart-item__delete-from-cart-btn btn"
+        class="cart-item__delete-from-cart-btn btn"
         @click.prevent="deleteFromCart"
       >
         Delete
@@ -41,7 +41,7 @@
 <script>
 
 export default {
-    name: 'v-cart-item',
+    name: 'cart-item',
     props: {
         cart_item_data: {
             type: Object,
@@ -65,7 +65,7 @@ export default {
 </script>
 
 <style lang="scss">
-    .v-cart-item {
+    .cart-item {
         display: flex;
         align-items: center;
         border-bottom: $border;
@@ -95,7 +95,7 @@ export default {
         }
     }
     @media screen and (max-width: 639px) {
-        .v-cart-item {
+        .cart-item {
             flex-direction: column;
             &__img {
                 max-width: 180px;

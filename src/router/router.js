@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-const vCatalog = () => import('../views/v-catalog')
-const vProduct = () => import('../views/v-product')
-const vCart = () => import('../views/v-cart')
+const Catalog = () => import('../views/catalog')
+const Product = () => import('../views/product')
+const Cart = () => import('../views/cart')
 
 Vue.use(Router);
 
@@ -13,16 +13,16 @@ let router = new Router({
         {
             path: '/',
             name: 'catalog',
-            component: vCatalog,
+            component: Catalog,
         },
         {
             path: '/products/:id',
             name: 'product',
-            component: vProduct,
+            component: Product,
         },
         {   path: '/cart',
             name: 'cart',
-            component: vCart,
+            component: Cart,
             props: true
         }
     ]

@@ -5,56 +5,280 @@
         "name": "teak lounger",
         "price": 1110.99,
         "id": "1",
-        "category": "Furniture"
+        "category": "Furniture",
+        "warranty": 3,
+        "dimensions": [
+          {
+            "id": "AA",
+            "name": "height",
+            "value": "40/90",
+            "unit": "cm"
+          },
+          {
+            "id": "AB",
+            "name": "width",
+            "value": "22",
+            "unit": "cm"
+          },
+          {
+            "id": "AD",
+            "name": "depth",
+            "value": "60",
+            "unit": "cm"
+          },
+          {
+            "id": "AE",
+            "name": "weight",
+            "value": "22",
+            "unit": "kg"
+          }
+        ],
+        "description": "Adipiscing bibendum est ultricies integer quis auctor elit. Nullam ac tortor vitae purus faucibus ornare suspendisse. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Interdum velit euismod in pellentesque massa."
       },
       {
         "image": "2.jpg",
         "name": "velvet sofa",
         "price": 2115.99,
         "id": "2",
-        "category": "Furniture"
+        "category": "Furniture",
+        "warranty": 3,
+        "dimensions": [
+          {
+            "id": "AF",
+            "name": "height",
+            "value": "40/210",
+            "unit": "cm"
+          },
+          {
+            "id": "AG",
+            "name": "width",
+            "value": "40",
+            "unit": "cm"
+          },
+          {
+            "id": "AH",
+            "name": "depth",
+            "value": "60",
+            "unit": "cm"
+          },
+          {
+            "id": "AI",
+            "name": "weight",
+            "value": "60",
+            "unit": "kg"
+          }
+        ],
+        "description": "Porttitor leo a diam sollicitudin tempor id. Diam donec adipiscing tristique risus nec feugiat in fermentum. Lorem dolor sed viverra ipsum nunc aliquet bibendum enim facilisis. Sociis natoque penatibus et magnis dis parturient montes nascetur. Nullam eget felis eget nunc lobortis mattis aliquam. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum."
       },
       {
         "image": "3.jpg",
         "name": "terasso vase",
         "price": 220,
         "id": "3",
-        "category": "Decor"
+        "category": "Decor",
+        "warranty": 1,
+        "dimensions": [
+          {
+            "id": "AJ",
+            "name": "height",
+            "value": "20",
+            "unit": "cm"
+          },
+          {
+            "id": "AK",
+            "name": "width",
+            "value": "12",
+            "unit": "cm"
+          },
+          {
+            "id": "AM",
+            "name": "depth",
+            "value": "5",
+            "unit": "cm"
+          },
+          {
+            "id": "AN",
+            "name": "weight",
+            "value": "6",
+            "unit": "kg"
+          }
+        ],
+        "description": "Cursus vitae congue mauris rhoncus aenean. Ut sem viverra aliquet eget sit amet tellus cras. Pellentesque elit eget gravida cum sociis. Sociis natoque penatibus et magnis dis. Dignissim convallis aenean et tortor at risus viverra. Et tortor at risus viverra adipiscing at in tellus. Sit amet mauris commodo quis imperdiet massa tincidunt. Vestibulum sed arcu non odio euismod lacinia at quis risus."
       },
       {
         "image": "4.jpg",
         "name": "velvet chaise lounger",
         "price": 1530.9900,
         "id": "4",
-        "category": "Furniture"
+        "category": "Furniture",
+        "warranty": 3,
+        "dimensions": [
+          {
+            "id": "AO",
+            "name": "height",
+            "value": "40/90",
+            "unit": "cm"
+          },
+          {
+            "id": "AP",
+            "name": "width",
+            "value": "60",
+            "unit": "cm"
+          },
+          {
+            "id": "AQ",
+            "name": "depth",
+            "value": "30",
+            "unit": "cm"
+          },
+          {
+            "id": "AR",
+            "name": "weight",
+            "value": "26",
+            "unit": "kg"
+          }
+        ],
+        "description": "Nulla facilisi nullam vehicula ipsum a arcu. Faucibus pulvinar elementum integer enim. Nunc pulvinar sapien et ligula ullamcorper malesuada. Mauris a diam maecenas sed enim. Eget est lorem ipsum dolor. Eu lobortis elementum nibh tellus molestie nunc non blandit. Aliquam vestibulum morbi blandit cursus risus at. Pharetra diam sit amet nisl suscipit adipiscing bibendum."
       },
       {
         "image": "5.jpg",
         "name": "allegra vase",
         "price": 310.9,
         "id": "5",
-        "category": "Decor"
+        "category": "Decor",
+        "warranty": 1,
+        "dimensions": [
+          {
+            "id": "AS",
+            "name": "height",
+            "value": "90",
+            "unit": "cm"
+          },
+          {
+            "id": "AT",
+            "name": "width",
+            "value": "60",
+            "unit": "cm"
+          },
+          {
+            "id": "AU",
+            "name": "depth",
+            "value": "30",
+            "unit": "cm"
+          },
+          {
+            "id": "AV",
+            "name": "weight",
+            "value": "2",
+            "unit": "kg"
+          }
+        ],
+        "description": "Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Orci porta non pulvinar neque laoreet suspendisse interdum consectetur. Eget duis at tellus at urna condimentum mattis pellentesque id. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Cursus eget nunc scelerisque viverra mauris in aliquam. At elementum eu facilisis sed odio. Morbi blandit cursus risus at ultrices mi."
       },
       {
         "image": "6.jpg",
         "name": "solid teak dining set",
         "price": 2670.990,
         "id": "6",
-        "category": "Furniture"
+        "category": "Furniture",
+        "warranty": 2,
+        "dimensions": [
+          {
+            "id": "AW",
+            "name": "height",
+            "value": "70",
+            "unit": "cm"
+          },
+          {
+            "id": "AX",
+            "name": "width",
+            "value": "120",
+            "unit": "cm"
+          },
+          {
+            "id": "AY",
+            "name": "depth",
+            "value": "140",
+            "unit": "cm"
+          },
+          {
+            "id": "AZ",
+            "name": "weight",
+            "value": "30",
+            "unit": "kg"
+          }
+        ],
+        "description": "Dui accumsan sit amet nulla facilisi morbi tempus. Sed risus pretium quam vulputate dignissim suspendisse. Nisl rhoncus mattis rhoncus urna neque. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi."
       },
       {
         "image": "7.jpg",
         "name": "wall mirror",
         "price": 530.9900,
         "id": "7",
-        "category": "Decor"
+        "category": "Decor",
+        "warranty": 1,
+        "dimensions": [
+          {
+            "id": "BA",
+            "name": "height",
+            "value": "70",
+            "unit": "cm"
+          },
+          {
+            "id": "BB",
+            "name": "width",
+            "value": "120",
+            "unit": "cm"
+          },
+          {
+            "id": "BC",
+            "name": "depth",
+            "value": "5",
+            "unit": "cm"
+          },
+          {
+            "id": "BD",
+            "name": "weight",
+            "value": "3",
+            "unit": "kg"
+          }
+        ],
+        "description": "Tortor dignissim convallis aenean et tortor. Facilisis mauris sit amet massa. Sed pulvinar proin gravida hendrerit. Sollicitudin tempor id eu nisl nunc mi. Aenean et tortor at risus viverra. Feugiat in fermentum posuere urna nec tincidunt. Magna etiam tempor orci eu lobortis."
       },
       {
         "image": "8.jpg",
         "name": "armless lounge",
         "price": 1950.99,
         "id": "8",
-        "category": "Furniture"
+        "category": "Furniture",
+        "warranty": 2,
+        "dimensions": [
+          {
+            "id": "BE",
+            "name": "height",
+            "value": "70",
+            "unit": "cm"
+          },
+          {
+            "id": "BF",
+            "name": "width",
+            "value": "120",
+            "unit": "cm"
+          },
+          {
+            "id": "BG",
+            "name": "depth",
+            "value": "50",
+            "unit": "cm"
+          },
+          {
+            "id": "BH",
+            "name": "weight",
+            "value": "38",
+            "unit": "kg"
+          }
+        ],
+        "description": "Faucibus vitae aliquet nec ullamcorper sit. Id venenatis a condimentum vitae sapien pellentesque. Cras semper auctor neque vitae. Nullam vehicula ipsum a arcu cursus. Ut sem viverra aliquet eget sit amet tellus cras. Pellentesque elit eget gravida cum sociis. Sociis natoque penatibus et magnis dis. Dignissim convallis aenean et tortor at risus viverra. Et tortor at risus viverra adipiscing at in tellus. Sit amet mauris commodo quis imperdiet massa tincidunt."
       }
     ]
   }
