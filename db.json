@@ -6,7 +6,7 @@
         "price": 1110.99,
         "id": "1",
         "category": "Furniture",
-        "warranty": 3,
+        "warranty": "Sem fringilla ut morbi tincidunt augue. Dui vivamus arcu felis bibendum ut. Dictum fusce ut placerat orci nulla pellentesque dignissim enim. Fermentum iaculis eu non diam phasellus vestibulum lorem.",
         "dimensions": [
           {
             "id": "AA",
@@ -41,7 +41,7 @@
         "price": 2115.99,
         "id": "2",
         "category": "Furniture",
-        "warranty": 3,
+        "warranty": "Malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi. Consectetur libero id faucibus nisl tincidunt eget nullam non nisi.",
         "dimensions": [
           {
             "id": "AF",
@@ -76,7 +76,7 @@
         "price": 220,
         "id": "3",
         "category": "Decor",
-        "warranty": 1,
+        "warranty": "Malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi. Consectetur libero id faucibus nisl tincidunt eget nullam non nisi.",
         "dimensions": [
           {
             "id": "AJ",
@@ -111,7 +111,7 @@
         "price": 1530.9900,
         "id": "4",
         "category": "Furniture",
-        "warranty": 3,
+        "warranty": "Pulvinar pellentesque habitant morbi tristique. Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Faucibus ornare suspendisse sed nisi.",
         "dimensions": [
           {
             "id": "AO",
@@ -146,7 +146,7 @@
         "price": 310.9,
         "id": "5",
         "category": "Decor",
-        "warranty": 1,
+        "warranty": "Pulvinar pellentesque habitant morbi tristique. Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Faucibus ornare suspendisse sed nisi.",
         "dimensions": [
           {
             "id": "AS",
@@ -181,7 +181,7 @@
         "price": 2670.990,
         "id": "6",
         "category": "Furniture",
-        "warranty": 2,
+        "warranty": "Vitae proin sagittis nisl rhoncus. Mi sit amet mauris commodo quis imperdiet massa. Proin libero nunc consequat interdum varius.",
         "dimensions": [
           {
             "id": "AW",
@@ -216,7 +216,7 @@
         "price": 530.9900,
         "id": "7",
         "category": "Decor",
-        "warranty": 1,
+        "warranty": "Lacus vestibulum sed arcu non odio euismod lacinia at quis. Neque laoreet suspendisse interdum consectetur. Massa placerat duis ultricies lacus sed turpis tincidunt.",
         "dimensions": [
           {
             "id": "BA",
@@ -251,7 +251,7 @@
         "price": 1950.99,
         "id": "8",
         "category": "Furniture",
-        "warranty": 2,
+        "warranty": "Tellus id interdum velit laoreet id. Tempus iaculis urna id volutpat lacus laoreet non curabitur. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida.",
         "dimensions": [
           {
             "id": "BE",

@@ -37,5 +37,11 @@ export default { // setting and updating the state
     },
     INCREMENT_CART: (state, index) => {
         state.cart[index].quantity++;
+    },
+    CHANGE_STATE_IS_PRODUCT_LOADING: (state, loading) => {
+        state.isLoadingProduct = loading;
+    },
+    CHANGE_STATE_IS_ERROR_PRODUCT_LOADING: (state, loading) => {
+        state.isErrorLoadingProduct = loading;
     }
 }

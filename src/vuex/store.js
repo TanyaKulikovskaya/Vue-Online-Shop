@@ -16,6 +16,8 @@ let store = new Vuex.Store({
         products: [],
         product: {},
         cart: [],
+        isLoadingProduct: false,
+        isErrorLoadingProduct: false
     },
     mutations,
     actions,

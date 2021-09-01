@@ -8,4 +8,10 @@ export default { // getters = computed properties
     CART(state) {
         return state.cart;
     },
+    IS_LOADING_PRODUCT(state) {
+        return state.isLoadingProduct;
+    },
+    IS_ERROR_LOADING_PRODUCT(state) {
+        return state.isErrorLoadingProduct;
+    },
 }

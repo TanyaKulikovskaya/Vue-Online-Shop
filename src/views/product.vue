@@ -1,5 +1,10 @@
 <template>
-    <main if="!loadingProduct" class="product">
+    <div>
+        <!-- <main v-if="isLoadingProduct">Loading</main>
+        <main v-if="isErroredLoadingProduct">error</main> -->
+        <main v-if="IS_LOADING_PRODUCT">Loading</main>
+        <main v-else-if="IS_ERROR_LOADING_PRODUCT">Error</main>
+        <main v-else class="product">
         <div class="product__header">
             <go-back />
         </div>
@@ -42,14 +47,12 @@
                     </ul>
                 </product-tab>
                 <product-tab label="WARRANTY">
-                    <p>We provide a {{ PRODUCT.warranty }} year warranty.</p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere rem eius cum eaque omnis reprehenderit quibusdam quod quasi sequi error nesciunt odit quidem, sapiente qui fuga impedit voluptas provident alias?
-                        Hic minima, sint in soluta ratione ducimus. Iure quaerat nostrum provident voluptas perspiciatis, consequuntur at totam tempora nam velit, quibusdam iusto placeat. Quas eos fuga eveniet veniam laborum corrupti sed.
-                    </p>
+                    {{ PRODUCT.warranty }}
                 </product-tab>
         </product-tabs>
-    </main>       
+    </main> 
+    </div>
+         
 </template>
 
 <script>
@@ -65,23 +68,24 @@ export default {
         ProductTabs,
         ProductTab
     },
-    data() {
-        return {
-            loadingProduct: false
-        }
-    },
+    // data() {
+    //     return {
+    //         isLoadingProduct: false,
+    //         isErroredLoadingProduct: false, 
+    //     }
+    // },
     computed: {
         ...mapGetters([
             'PRODUCT',
+            'IS_LOADING_PRODUCT',
+            'IS_ERROR_LOADING_PRODUCT'
+            
         ]),
         productWithImage() {
             return {
                 ...this.PRODUCT,
                 image: this.PRODUCT.image && require(`../assets/images/${this.PRODUCT.image}`)
             }
-        },
-        delivery() {
-            return this.PRODUCT.price > 1000 ? 'FREE DELIVERY' : '100'
         }
     },
     methods: {
@@ -92,23 +96,31 @@ export default {
         addToCart() {
             this.ADD_TO_CART(this.PRODUCT);
         },
-        loadProduct() {
-            this.loadingProduct = true;
-            this.GET_PRODUCT_FROM_API(this.$route.params.id).then(() => this.loadingProduct = false)
-        }
+        // loadProduct() {
+        //     this.isLoadingProduct = true;
+        //     //this.isErroredLoadingProduct = false,
+        //     this.GET_PRODUCT_FROM_API(this.$route.params.id)
+        //         .catch((error) => {
+        //             console.log(error.message);
+        //             this.isErroredLoadingProduct = true;
+        //         })
+        //         .then(() => this.isLoadingProduct = false)
+        // }
     },
     created() {
-        this.loadProduct();
+        this.GET_PRODUCT_FROM_API(this.$route.params.id)
+        //this.loadProduct();
     },
-    watch: {
-        "$route.params.id": {
-            handler() {
-                if(this.$route.params.id !== undefined) {
-                    this.loadProduct();
-                }
-            }
-        }
-    },
+    // watch: {
+    //     "$route.params.id": {
+    //         handler() {
+    //             if(this.$route.params.id !== undefined) {
+    //                 this.GET_PRODUCT_FROM_API(this.$route.params.id)
+    //                 //this.loadProduct();
+    //             }
+    //         }
+    //     }
+    // },
 };
 </script>
 

@@ -12,6 +12,7 @@
     "core-js": "^3.6.5",
     "json-server": "^0.16.3",
     "normalize-scss": "^7.0.1",
+    "prettier": "^2.3.2",
     "sass": "^1.35.2",
     "vue": "^2.6.11",
     "vue-currency-filter": "^5.2.0",
