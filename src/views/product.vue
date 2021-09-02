@@ -1,64 +1,64 @@
 <template>
     <div>
-        <!-- <main v-if="isLoadingProduct">Loading</main>
-        <main v-if="isErroredLoadingProduct">error</main> -->
-        <main v-if="IS_LOADING_PRODUCT">Loading</main>
+        <main v-if="IS_LOADING_PRODUCT">
+            <product-skeleton />
+        </main>
         <main v-else-if="IS_ERROR_LOADING_PRODUCT">Error</main>
         <main v-else class="product">
-        <div class="product__header">
-            <go-back />
-        </div>
-        <div class="product__body">
-            <div class="product__img">
-                <img 
-                    :src="productWithImage.image" 
-                    :alt="`Image of ${PRODUCT.name}`"
-                >
+            <div class="product__header">
+                <go-back />
             </div>
-            <div class="product__info">
-                <h2 class="product__name">{{ PRODUCT.name }}</h2>
-                <p class="product__article">Article: {{ PRODUCT.id }}</p>
-                <p class="product__price">Price: {{ PRODUCT.price | currency }}</p>
-                <button 
-                    class="product__add-to-cart-btn btn"
-                    @click.prevent="addToCart"
-                >
-                    Add to cart
-                </button>
-            </div> 
-        </div>
-        <product-tabs>
-                <product-tab
-                    :selected="true"
-                    label="DESCRIPTION"
+            <div class="product__body">
+                <div class="product__img">
+                    <img 
+                        :src="productWithImage.image" 
+                        :alt="`Image of ${PRODUCT.name}`"
                     >
-                    {{ PRODUCT.description }}
-                </product-tab>
-                <product-tab label="DIMENSIONS">
-                    <ul>
-                        <li 
-                            v-for="dimension in PRODUCT.dimensions"
-                            :key="dimension.id"
-                            class="product-tabs__item"
-                            >
-                            <dt>{{ dimension.name }} ({{ dimension.unit }}) : </dt>
-                            <dd>{{ dimension.value }}</dd>
-                        </li>
-                    </ul>
-                </product-tab>
-                <product-tab label="WARRANTY">
-                    {{ PRODUCT.warranty }}
-                </product-tab>
-        </product-tabs>
-    </main> 
+                </div>
+                <div class="product__info">
+                    <h2 class="product__name">{{ PRODUCT.name }}</h2>
+                    <p class="product__article">Article: {{ PRODUCT.id }}</p>
+                    <p class="product__price">Price: {{ PRODUCT.price | currency }}</p>
+                    <button 
+                        class="product__add-to-cart-btn btn"
+                        @click.prevent="addToCart"
+                    >
+                        Add to cart
+                    </button>
+                </div> 
+            </div>
+            <product-tabs>
+                    <product-tab
+                        :selected="true"
+                        label="DESCRIPTION"
+                        >
+                        {{ PRODUCT.description }}
+                    </product-tab>
+                    <product-tab label="DIMENSIONS">
+                        <ul>
+                            <li 
+                                v-for="dimension in PRODUCT.dimensions"
+                                :key="dimension.id"
+                                class="product-tabs__item"
+                                >
+                                <dt>{{ dimension.name }} ({{ dimension.unit }}) : </dt>
+                                <dd>{{ dimension.value }}</dd>
+                            </li>
+                        </ul>
+                    </product-tab>
+                    <product-tab label="WARRANTY">
+                        {{ PRODUCT.warranty }}
+                    </product-tab>
+            </product-tabs>
+        </main> 
     </div>
-         
 </template>
 
 <script>
 import GoBack from '../components/go-back.vue'
 import ProductTabs from '../components/product/product-tabs.vue'
 import ProductTab from '../components/product/product-tab.vue'
+import ProductSkeleton from '../components/product/product-skeleton.vue'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
@@ -66,20 +66,14 @@ export default {
     components: {
         GoBack,
         ProductTabs,
-        ProductTab
+        ProductTab,
+        ProductSkeleton
     },
-    // data() {
-    //     return {
-    //         isLoadingProduct: false,
-    //         isErroredLoadingProduct: false, 
-    //     }
-    // },
     computed: {
         ...mapGetters([
             'PRODUCT',
             'IS_LOADING_PRODUCT',
             'IS_ERROR_LOADING_PRODUCT'
-            
         ]),
         productWithImage() {
             return {
@@ -95,32 +89,11 @@ export default {
         ]),
         addToCart() {
             this.ADD_TO_CART(this.PRODUCT);
-        },
-        // loadProduct() {
-        //     this.isLoadingProduct = true;
-        //     //this.isErroredLoadingProduct = false,
-        //     this.GET_PRODUCT_FROM_API(this.$route.params.id)
-        //         .catch((error) => {
-        //             console.log(error.message);
-        //             this.isErroredLoadingProduct = true;
-        //         })
-        //         .then(() => this.isLoadingProduct = false)
-        // }
+        }
     },
     created() {
         this.GET_PRODUCT_FROM_API(this.$route.params.id)
-        //this.loadProduct();
-    },
-    // watch: {
-    //     "$route.params.id": {
-    //         handler() {
-    //             if(this.$route.params.id !== undefined) {
-    //                 this.GET_PRODUCT_FROM_API(this.$route.params.id)
-    //                 //this.loadProduct();
-    //             }
-    //         }
-    //     }
-    // },
+    }
 };
 </script>
 

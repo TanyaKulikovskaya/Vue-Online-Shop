@@ -45,12 +45,8 @@ export default {
             'CART'
         ]),
         filteredProducts() {
-            if(this.sortedProducts.length) {
-                return this.sortedProducts;
-            } else {
-                return this.PRODUCTS;
-            }
-        },
+            return this.sortedProducts.length ? this.sortedProducts : this.PRODUCTS;
+        }
     },
     methods: {
         ...mapActions([

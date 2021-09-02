@@ -17,13 +17,13 @@ export default { // actions = methods
     GET_PRODUCT_FROM_API({commit}, id) {
         commit('CHANGE_STATE_IS_ERROR_PRODUCT_LOADING', false);
         commit('CHANGE_STATE_IS_PRODUCT_LOADING', true);
-        return axios.get(API_BASE_URL + '/products/' + `${id}`)
+        return axios
+            .get(API_BASE_URL + '/products/' + `${id}`)
             .then((product) => {
                 commit('SET_PRODUCT_TO_STATE', product.data);
             })
             .catch(() => {
                 commit('CHANGE_STATE_IS_ERROR_PRODUCT_LOADING', true)
-               
             })
             .finally(() => {
                 commit('CHANGE_STATE_IS_PRODUCT_LOADING', false)
