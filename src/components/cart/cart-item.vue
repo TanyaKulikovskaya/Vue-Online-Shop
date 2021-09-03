@@ -3,42 +3,43 @@
       <router-link :to="{ name: 'product', params: { id: cart_item_data.id}}">
         <img 
             class="cart-item__img" 
-            :src=" require(`../../assets/images/${cart_item_data.image}`)" 
-            :alt="`Image of ${cart_item_data.name}`"
-        >
+            :src="cartItemImagePath" 
+            :alt="cartItemImageAlt"
+            >
       </router-link>
       <div class="cart-item__info">
           <p><b>{{ cart_item_data.name | formattedTitle }}</b></p>
           <span>{{ cart_item_data.price | currency }}</span>
-          <span>Article: {{ cart_item_data.id }}</span>
+          <span>{{ cartItemArticle }}</span>
       </div>
       
        <div class="cart-item__quantity">
-          <p>Quantity:</p> 
+          <p>{{ qtyText }}</p> 
           <span 
             class="quantity-btn" 
-            @click="decrementItem"
-          >
-            -
+            @click="handleClick('decrementItem')"
+            >
+            {{ decText }}
           </span>
           <span>{{ cart_item_data.quantity }}</span>
           <span 
             class="quantity-btn" 
-            @click="incrementItem"
-          >
-            +
+            @click="handleClick('incrementItem')"
+            >
+            {{ incText }}
           </span>
        </div>
       <button
         class="cart-item__delete-from-cart-btn btn"
-        @click.prevent="deleteFromCart"
-      >
-        Delete
+        @click.prevent="handleClick('deleteFromCart')"
+        >
+        {{ deleteText }}
       </button>
   </div>
 </template>
 
 <script>
+import constants from '../../lang/en';
 
 export default {
     name: 'cart-item',
@@ -50,17 +51,32 @@ export default {
             }
         }
     },
-    methods: {
-        decrementItem() {
-            this.$emit('decrement');
-        },
-        incrementItem() {
-            this.$emit('increment');
-        },
-        deleteFromCart() {
-            this.$emit('deleteFromCart')
+    data() {
+        return {
+            qtyText: constants.CART_ITEM_QUANTITY.QTY_TEXT,
+            decText: constants.CART_ITEM_QUANTITY.DEC_TEXT,
+            incText: constants.CART_ITEM_QUANTITY.INC_TEXT,
+            altText: constants.CART_ITEM_ALT_TEXT,
+            articleText: constants.CART_ITEM_ART_TEXT,
+            deleteText: constants.CART_ITEM_DEL_TEXT
         }
     },
+    computed: {
+        cartItemImagePath() {
+            return require(`../../assets/images/${this.cart_item_data.image}`)
+        },
+        cartItemImageAlt() {
+            return `${this.altText} ${this.cart_item_data.name}`
+        },
+        cartItemArticle() {
+            return `${this.articleText}: ${this.cart_item_data.id}`
+        }
+    },
+    methods: {
+        handleClick(cartItemAction) {
+            this.$emit(cartItemAction)
+        }
+    }
 }
 </script>
 
@@ -73,7 +89,9 @@ export default {
         margin-bottom: $margin*2;
         background-color: $white;
         &__img {
-            max-width: 90px;
+            background-color: $light-gray;
+            width: 90px;
+            height: 135px;
         }
         &__info {
             flex-basis: 45%;
@@ -98,7 +116,8 @@ export default {
         .cart-item {
             flex-direction: column;
             &__img {
-                max-width: 180px;
+                width: 180px;
+                height: 270px;
                 margin-bottom: $margin;
             }
             &__info {

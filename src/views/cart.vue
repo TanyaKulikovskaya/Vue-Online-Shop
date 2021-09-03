@@ -15,8 +15,8 @@
         :key="item.id"
         :cart_item_data="item"
         @deleteFromCart="deleteFromCart(index)"
-        @decrement="decrement(index)"
-        @increment="increment(index)"
+        @decrementItem="decrement(index)"
+        @incrementItem="increment(index)"
         />
       <div>
           <p 

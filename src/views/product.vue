@@ -11,8 +11,8 @@
             <div class="product__body">
                 <div class="product__img">
                     <img 
-                        :src="productWithImage.image" 
-                        :alt="`Image of ${PRODUCT.name}`"
+                        :src="productImagePath.image" 
+                        :alt="productImageAlt"
                     >
                 </div>
                 <div class="product__info">
@@ -75,11 +75,14 @@ export default {
             'IS_LOADING_PRODUCT',
             'IS_ERROR_LOADING_PRODUCT'
         ]),
-        productWithImage() {
+        productImagePath() {
             return {
                 ...this.PRODUCT,
                 image: this.PRODUCT.image && require(`../assets/images/${this.PRODUCT.image}`)
             }
+        },
+        productImageAlt() {
+            return `Image of ${this.PRODUCT.name}`
         }
     },
     methods: {
@@ -109,36 +112,26 @@ export default {
             padding-top: $padding*2;
             padding-bottom: $padding*2;
         }
-        @media screen and (max-width: 639px) {
-            &__body {
-                padding-left: $padding*2;
-                padding-right: $padding*2;
-            }
-        }
         &__img {
+            position: relative;
+            background-color: $light-gray;
+            padding-bottom: 60%;
             flex: 0 0 40%;
+            height: 0;
+            overflow: hidden;
             box-shadow: $box-shadow;
             img {
-                max-width: 100%;
-                height: auto;
-                display: block;
-            }
-        }
-        @media screen and (max-width: 639px) {
-            &__img {
-                flex: 0 0 100%;
-            }
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }  
         }
         &__info {
             flex: 0 0 60%;
             padding: $padding*2 $padding*4;
             text-align: left;
-        }
-        @media screen and (max-width: 639px) {
-            &__info {
-                flex: 0 0 100%;
-                padding: $padding*2 0;
-            }
         }
         &__name {
             text-transform: uppercase;
@@ -169,6 +162,19 @@ export default {
             }
             &:not(:last-child) {
                 margin-bottom: $margin;
+            }
+        }
+        @media screen and (max-width: 639px) {
+            &__body {
+                padding-left: $padding*2;
+                padding-right: $padding*2;
+            }
+            &__img {
+                margin-bottom: $margin*2;
+            }
+            &__info {
+                flex: 0 0 100%;
+                padding: 0;
             }
         }
 

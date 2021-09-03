@@ -60,6 +60,11 @@ export default {
             padding-top: $padding*2;
             text-align: left;
         }
+        @media screen and (max-width: 639px) {
+            &__label {
+                font-size: 14px;
+            }
+        }
     }
 
 </style>

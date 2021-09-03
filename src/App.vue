@@ -2,10 +2,10 @@
   <div id="app">
     <div class="wrapper">
       <the-header />
-        <keep-alive :exclude="['product']">
-          <router-view></router-view>
-        </keep-alive>
-      </div>
+      <keep-alive :exclude="['product']">
+        <router-view></router-view>
+      </keep-alive>
+    </div>
   </div>
 </template>
 
