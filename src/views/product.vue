@@ -1,9 +1,9 @@
 <template>
     <div>
-        <main v-if="IS_LOADING_PRODUCT">
+        <main v-if="isLoadingProduct">
             <product-skeleton />
         </main>
-        <main v-else-if="IS_ERROR_LOADING_PRODUCT">Error</main>
+        <main v-else-if="isErrorLoadingProduct">Error</main>
         <main v-else class="product">
             <div class="product__header">
                 <go-back />
@@ -16,15 +16,15 @@
                         >
                 </div>
                 <div class="product__info">
-                    <h2 class="product__name">{{ PRODUCT.name }}</h2>
+                    <h2 class="product__name">{{ product.name }}</h2>
                     <p class="product__article">{{ productArticle }}</p>
                     <p class="product__price">
                         <span>{{ priceText }}: </span> 
-                        <span>{{ PRODUCT.price | currency }}</span>
+                        <span>{{ product.price | currency }}</span>
                     </p>
                     <button 
                         class="product__add-to-cart-btn btn"
-                        @click.prevent="addToCart"
+                        @click="addProductToCart"
                         >
                         {{ btnAddToCartText }}
                     </button>
@@ -33,14 +33,14 @@
             <product-tabs>
                     <product-tab
                         :selected="true"
-                        label="Description"
+                        label="description"
                         >
-                        {{ PRODUCT.description }}
+                        {{ product.description }}
                     </product-tab>
-                    <product-tab label="Dimensions">
+                    <product-tab label="dimensions">
                         <ul>
                             <li 
-                                v-for="dimension in PRODUCT.dimensions"
+                                v-for="dimension in product.dimensions"
                                 :key="dimension.id"
                                 class="product-tabs__item"
                                 >
@@ -50,8 +50,8 @@
                             </li>
                         </ul>
                     </product-tab>
-                    <product-tab label="Warranty">
-                        {{ PRODUCT.warranty }}
+                    <product-tab label="warranty">
+                        {{ product.warranty }}
                     </product-tab>
             </product-tabs>
         </main> 
@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import constants from '../services/constants';
+import constants from '../services/constants'
 import GoBack from '../components/go-back.vue'
 import ProductTabs from '../components/product/product-tabs.vue'
 import ProductTab from '../components/product/product-tab.vue'
@@ -76,41 +76,45 @@ export default {
     },
     data() {
         return {
+            altText: constants.ALT_TEXT,
             articleText: constants.PRODUCT.ART_TEXT,
             priceText: constants.PRODUCT.PRICE_TEXT,
             btnAddToCartText: constants.PRODUCT.BTN_ADD_TO_CART_TEXT,
+            description: constants.PRODUCT.TAB_LABELS.DESCRIPTION_TEXT,
+            dimensions: constants.PRODUCT.TAB_LABELS.DIMENSIONS_TEXT,
+            warranty: constants.PRODUCT.TAB_LABELS.WARRANTY_TEXT
         }
     },
     computed: {
-        ...mapGetters([
-            'PRODUCT',
-            'IS_LOADING_PRODUCT',
-            'IS_ERROR_LOADING_PRODUCT'
-        ]),
+        ...mapGetters({
+            product: 'PRODUCT',
+            isLoadingProduct: 'IS_LOADING_PRODUCT',
+            isErrorLoadingProduct: 'IS_ERROR_LOADING_PRODUCT'
+        }),
         productImagePath() {
             return {
-                ...this.PRODUCT,
-                image: this.PRODUCT.image && require(`../assets/images/${this.PRODUCT.image}`)
+                ...this.product,
+                image: this.product.image && require(`../assets/images/${this.product.image}`)
             }
         },
         productImageAlt() {
-            return `Image of ${this.PRODUCT.name}`
+            return `${this.altText} ${this.product.name}`
         },
         productArticle() {
-            return `${this.articleText}: ${this.PRODUCT.id}`
+            return `${this.articleText}: ${this.product.id}`
         }
     },
     methods: {
-        ...mapActions([
-            'GET_PRODUCT_FROM_API',
-            'ADD_TO_CART',
-        ]),
-        addToCart() {
-            this.ADD_TO_CART(this.PRODUCT);
+        ...mapActions({
+            getProductFromApi: 'GET_PRODUCT_FROM_API',
+            addToCart: 'ADD_TO_CART',
+        }),
+        addProductToCart() {
+            this.addToCart(this.product);
         }
     },
     created() {
-        this.GET_PRODUCT_FROM_API(this.$route.params.id)
+        this.getProductFromApi(this.$route.params.id);
     }
 };
 </script>

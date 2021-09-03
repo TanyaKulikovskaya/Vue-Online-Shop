@@ -27,7 +27,7 @@ export default { // setting and updating the state
             });
         }
     },
-    REMOVE_FROM_CART: (state, index) => {
+    REMOVE_CART_ITEM_FROM_CART: (state, index) => {
         state.cart.splice(index, 1);
     },
     DECREMENT_CART: (state, index) => {

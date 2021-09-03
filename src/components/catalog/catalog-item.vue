@@ -1,9 +1,9 @@
 <template>
   <li class="catalog-item">
-    <router-link :to="{ name: 'product', params: { id: product_data.id}}">
+    <router-link :to="{ name: 'product', params: { id: product_data.id} }">
       <img class="catalog-item__img"        
-          :src="require(`../../assets/images/${product_data.image}`)" 
-          :alt="`Image of ${product_data.name}`"
+          :src="catalogItemImagePath" 
+          :alt="catalogItemImageAlt"
         >
       <h2 class="catalog-item__name">{{ product_data.name | formattedTitle }}</h2>
       <p class="catalog-item__price">{{ product_data.price | currency}}</p>
@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import constants from '../../services/constants'
+
 export default {
     name: "catalog-item",
     props: {
@@ -22,10 +24,18 @@ export default {
             }
         }
     },
-    methods: {
-        addToCart() {
-            this.$emit('addToCart', this.product_data);
+    data() {
+        return {
+            altText: constants.ALT_TEXT,
         }
+    },
+    computed: {
+        catalogItemImagePath() {
+            return require(`../../assets/images/${this.product_data.image}`)
+        },
+        catalogItemImageAlt() {
+            return `${this.altText} ${this.product_data.name}`
+        },
     }
 }
 </script>
@@ -51,7 +61,8 @@ export default {
           font-weight: 700;
           transition-duration: .2s;
         }
-        &:hover &__price {
+        &:hover 
+          &__price {
             color: $yellow;
             transition-duration: .3s;
         }

@@ -6,12 +6,12 @@
       </div>
       <p 
         class="cart__label"
-        v-if="!CART.length"
+        v-if="!cart.length"
         >
-        {{ emrtyCartSubtitleText }}
+        {{ emptyCartSubtitleText }}
       </p>
       <cart-item 
-        v-for="(item, index) in CART"
+        v-for="(item, index) in cart"
         :key="item.id"
         :cart_item_data="item"
         @deleteFromCart="deleteFromCart(index)"
@@ -21,7 +21,7 @@
       <div>
           <p 
             class="cart__total"
-            v-if="CART.length"
+            v-if="cart.length"
             >
               <b>{{ totalCartTitleText }}: </b>
               <span>{{ cartTotalCost | currency }}</span>
@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import constants from '../services/constants';
+import constants from '../services/constants'
 import CartItem from '../components/cart/cart-item.vue'
 import GoBack from '../components/go-back.vue'
 import { mapActions, mapGetters } from 'vuex'
@@ -48,33 +48,33 @@ export default {
     data() {
         return {
             cartTitleText: constants.CART.CART_TITLE_TEXT,
-            emrtyCartSubtitleText: constants.CART.EMPTY_CART_SUBTITLE_TEXT,
+            emptyCartSubtitleText: constants.CART.EMPTY_CART_SUBTITLE_TEXT,
             totalCartTitleText: constants.CART.TOTAL_CART_TITLE_TEXT,
             btnShopText: constants.CART.BTN_SHOP_TEXT,
         }
     },
     computed: {
-        ...mapGetters([
-            'CART',
-        ]),
+        ...mapGetters({
+            cart: 'CART',
+        }),
         cartTotalCost() {
-            return this.CART.map(item => (item.price*item.quantity)).reduce((sum, el) => sum + el, 0)
+            return this.cart.map(item => (item.price*item.quantity)).reduce((sum, el) => sum + el, 0)
         }
     },
     methods: {
-        ...mapActions([
-            'DELETE_FROM_CART',
-            'DECREMENT_CART_ITEM',
-            'INCREMENT_CART_ITEM'
-        ]),
+        ...mapActions({
+            deleteCartItemFromCart:'DELETE_CART_ITEM_FROM_CART',
+            decrementCartItem: 'DECREMENT_CART_ITEM',
+            incrementCartItem:'INCREMENT_CART_ITEM'
+        }),
         deleteFromCart(index) {
-            this.DELETE_FROM_CART(index);
+            this.deleteCartItemFromCart(index);
         },
         decrement(index) {
-            this.DECREMENT_CART_ITEM(index);
+            this.decrementCartItem(index);
         },
         increment(index) {
-            this.INCREMENT_CART_ITEM(index);
+            this.incrementCartItem(index);
         } 
     }
 }

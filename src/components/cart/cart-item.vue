@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import constants from '../../services/constants';
+import constants from '../../services/constants'
 
 export default {
     name: 'cart-item',
@@ -53,12 +53,12 @@ export default {
     },
     data() {
         return {
+            altText: constants.ALT_TEXT,
+            articleText: constants.CART_ITEM.ART_TEXT,
+            deleteText: constants.CART_ITEM.DEL_TEXT,
             qtyText: constants.CART_ITEM.QUANTITY.QTY_TEXT,
             decText: constants.CART_ITEM.QUANTITY.DEC_TEXT,
             incText: constants.CART_ITEM.QUANTITY.INC_TEXT,
-            altText: constants.CART_ITEM.ALT_TEXT,
-            articleText: constants.CART.ITEM_ART_TEXT,
-            deleteText: constants.CART.ITEM_DEL_TEXT
         }
     },
     computed: {

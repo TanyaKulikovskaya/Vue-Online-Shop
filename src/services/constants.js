@@ -1,12 +1,21 @@
 export default {
+    HEADER: {
+        LOGO_TEXT: 'FUNIRO',
+        CART_TEXT: 'Cart'
+    },
+    ALT_TEXT: 'Image of',
     PRODUCT: {
         ART_TEXT: 'Article',
         PRICE_TEXT: 'Price',
-        BTN_ADD_TO_CART_TEXT: 'Add to cart'
+        BTN_ADD_TO_CART_TEXT: 'Add to cart',
+        TAB_LABELS: {
+            DESCRIPTION_TEXT: 'Description',
+            DIMENSIONS_TEXT: 'Dimensions',
+            WARRANRY_TEXT: 'Warranty'
+        }
     },
     GO_BACK_TEXT: 'Back',
     CART_ITEM: {
-        ALT_TEXT: 'Image of',
         ART_TEXT: 'Article',
         DEL_TEXT: 'Delete',
         QUANTITY: {

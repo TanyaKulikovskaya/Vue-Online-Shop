@@ -5,14 +5,13 @@
             :options="categories"
             :selected="selected"
             @select="sortByCategories"
-        />
+            />
         <transition-group tag="ul" class="catalog__list" name="list">
             <catalog-item 
                 v-for="product in filteredProducts"
                 :key="product.id"
                 :product_data="product"
-                @addToCart="addToCart"
-            />
+                />
         </transition-group>
     </main>
 </template>
@@ -40,25 +39,21 @@ export default {
         }
     },
     computed: {
-        ...mapGetters([
-            'PRODUCTS',
-            'CART'
-        ]),
+        ...mapGetters({
+            products: 'PRODUCTS'
+        }),
         filteredProducts() {
-            return this.sortedProducts.length ? this.sortedProducts : this.PRODUCTS;
+            return this.sortedProducts.length ? this.sortedProducts : this.products;
         }
     },
     methods: {
-        ...mapActions([
-            'GET_PRODUCTS_FROM_API',
-            'ADD_TO_CART',
-        ]),
-        addToCart(data) {
-            this.ADD_TO_CART(data);
-        },
+        ...mapActions({
+            getProductsFromApi: 'GET_PRODUCTS_FROM_API'
+            
+        }),
         sortByCategories(category) {
             this.sortedProducts = [];
-            this.PRODUCTS.map(item => {
+            this.products.map(item => {
                 if(item.category === category.name) {
                     this.sortedProducts.push(item);
                 }
@@ -68,7 +63,7 @@ export default {
 
     },
     created() {
-        this.GET_PRODUCTS_FROM_API();
+        this.getProductsFromApi();
     }
 }
 </script>

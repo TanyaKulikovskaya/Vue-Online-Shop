@@ -1,20 +1,19 @@
 <template>
     <header class="header">
         <router-link to="/">
-            <p class="header__logo">
-                FUNIRO
-            </p>
+            <p class="header__logo">{{ headerLogoText }}</p>
         </router-link>
          <router-link :to="{ name: 'cart' }">
             <div class="header__link-to-cart">
-                <p>Cart</p> 
-                <the-header-cart-counter-badge :count="CART.length" />
+                <p>{{ headerCartText }}</p> 
+                <the-header-cart-counter-badge :count="cart.length" />
             </div>
         </router-link>
     </header>
 </template>
 
 <script>
+import constants from '../../services/constants'
 import TheHeaderCartCounterBadge from './the-header-cart-counter-badge'
 import { mapGetters } from 'vuex'
 
@@ -23,10 +22,16 @@ export default {
     components: {
         TheHeaderCartCounterBadge,
     },
+    data() {
+        return {
+            headerLogoText: constants.HEADER.LOGO_TEXT,
+            headerCartText: constants.HEADER.CART_TEXT
+        }
+    },
     computed: {
-        ...mapGetters([
-            'CART',
-        ])
+        ...mapGetters({
+            cart: 'CART',
+        })
     },
 }
 </script>
