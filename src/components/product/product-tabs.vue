@@ -51,6 +51,7 @@ export default {
             padding-bottom: $padding;
             border-bottom: $border;
             cursor: pointer;
+            text-transform: uppercase;
             &.is-active {
                 color: $black;
                 border-color: $black;

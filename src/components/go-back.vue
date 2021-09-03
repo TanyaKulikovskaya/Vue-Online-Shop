@@ -1,18 +1,25 @@
 <template>
     <a 
       class="v-go-back"
-      @click.stop.prevent="goBack"
+      @click.prevent="goBack"
       >
         <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M16.4 5.65714V7.54286H4.70005L8.60005 11.3143L7.62505 13.2L0.800049 6.6L7.62505 0L8.60005 1.88571L4.70005 5.65714H16.4Z" fill="white"/>
         </svg>
-        <span>Back</span>
+        <span>{{ goBackText }}</span>
     </a>
 </template>
 
 <script>
+import constants from '../services/constants';
+
 export default {
     name: 'v-go-back',
+    data() {
+        return {
+            goBackText: constants.GO_BACK_TEXT
+        }
+    },
     methods: {
         goBack() {
             window.history.length > 1 ? this.$router.go(-1) : this.$router.push('/');

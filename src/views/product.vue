@@ -13,40 +13,44 @@
                     <img 
                         :src="productImagePath.image" 
                         :alt="productImageAlt"
-                    >
+                        >
                 </div>
                 <div class="product__info">
                     <h2 class="product__name">{{ PRODUCT.name }}</h2>
-                    <p class="product__article">Article: {{ PRODUCT.id }}</p>
-                    <p class="product__price">Price: {{ PRODUCT.price | currency }}</p>
+                    <p class="product__article">{{ productArticle }}</p>
+                    <p class="product__price">
+                        <span>{{ priceText }}: </span> 
+                        <span>{{ PRODUCT.price | currency }}</span>
+                    </p>
                     <button 
                         class="product__add-to-cart-btn btn"
                         @click.prevent="addToCart"
-                    >
-                        Add to cart
+                        >
+                        {{ btnAddToCartText }}
                     </button>
                 </div> 
             </div>
             <product-tabs>
                     <product-tab
                         :selected="true"
-                        label="DESCRIPTION"
+                        label="Description"
                         >
                         {{ PRODUCT.description }}
                     </product-tab>
-                    <product-tab label="DIMENSIONS">
+                    <product-tab label="Dimensions">
                         <ul>
                             <li 
                                 v-for="dimension in PRODUCT.dimensions"
                                 :key="dimension.id"
                                 class="product-tabs__item"
                                 >
-                                <dt>{{ dimension.name }} ({{ dimension.unit }}) : </dt>
+                                <dt>{{ dimension.name }}</dt>
+                                <dd>{{ dimension.unit }}</dd>
                                 <dd>{{ dimension.value }}</dd>
                             </li>
                         </ul>
                     </product-tab>
-                    <product-tab label="WARRANTY">
+                    <product-tab label="Warranty">
                         {{ PRODUCT.warranty }}
                     </product-tab>
             </product-tabs>
@@ -55,6 +59,7 @@
 </template>
 
 <script>
+import constants from '../services/constants';
 import GoBack from '../components/go-back.vue'
 import ProductTabs from '../components/product/product-tabs.vue'
 import ProductTab from '../components/product/product-tab.vue'
@@ -68,6 +73,13 @@ export default {
         ProductTabs,
         ProductTab,
         ProductSkeleton
+    },
+    data() {
+        return {
+            articleText: constants.PRODUCT.ART_TEXT,
+            priceText: constants.PRODUCT.PRICE_TEXT,
+            btnAddToCartText: constants.PRODUCT.BTN_ADD_TO_CART_TEXT,
+        }
     },
     computed: {
         ...mapGetters([
@@ -83,6 +95,9 @@ export default {
         },
         productImageAlt() {
             return `Image of ${this.PRODUCT.name}`
+        },
+        productArticle() {
+            return `${this.articleText}: ${this.PRODUCT.id}`
         }
     },
     methods: {
@@ -154,11 +169,14 @@ export default {
         }
         .product-tabs__item {
             display: flex;
-            max-width: 300px;
+            max-width: 260px;
             width: 100%;
-            dt,
-            dd {
+            dt {
                 width: 50%;
+            }
+            dd {
+                width: 25%;
+                text-align: right;
             }
             &:not(:last-child) {
                 margin-bottom: $margin;
