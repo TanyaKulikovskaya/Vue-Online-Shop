@@ -3,7 +3,9 @@
         <main v-if="isLoadingProduct">
             <product-skeleton />
         </main>
-        <main v-else-if="isErrorLoadingProduct">Error</main>
+        <main v-else-if="isErrorLoadingProduct">
+            <product-error />
+        </main>
         <main v-else class="product">
             <div class="product__header">
                 <go-back />
@@ -64,6 +66,7 @@ import GoBack from '../components/go-back.vue'
 import ProductTabs from '../components/product/product-tabs.vue'
 import ProductTab from '../components/product/product-tab.vue'
 import ProductSkeleton from '../components/product/product-skeleton.vue'
+import ProductError from '../components/product/product-error.vue'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
@@ -72,7 +75,8 @@ export default {
         GoBack,
         ProductTabs,
         ProductTab,
-        ProductSkeleton
+        ProductSkeleton,
+        ProductError
     },
     data() {
         return {

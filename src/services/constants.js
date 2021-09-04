@@ -14,6 +14,10 @@ export default {
             WARRANRY_TEXT: 'Warranty'
         }
     },
+    ERROR_LOADING_PRODUCT: {
+        TITLE: 'Sorry',
+        MESSAGE: 'we can not load that page or something has gone wrong',
+    },
     GO_BACK_TEXT: 'Back',
     CART_ITEM: {
         ART_TEXT: 'Article',
