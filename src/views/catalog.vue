@@ -1,18 +1,28 @@
 <template>
     <main class="catalog">
         <h1 class="catalog__title">Catalog</h1>
-        <catalog-select 
-            :options="categories"
-            :selected="selected"
-            @select="sortByCategories"
-            />
-        <transition-group tag="ul" class="catalog__list" name="list">
-            <catalog-item 
-                v-for="product in filteredProducts"
-                :key="product.id"
-                :product_data="product"
-                />
-        </transition-group>
+        <div>
+            <div v-if="isLoadingProducts">
+                <catalog-skeleton />
+            </div>
+            <div v-else-if="isErrorLoadingProducts">
+                error
+            </div>
+            <section v-else>
+                <catalog-select
+                    :options="categories"
+                    :selected="selected"
+                    @select="sortByCategories"
+                    />
+                <transition-group tag="ul" class="catalog__list" name="list">
+                    <catalog-item 
+                        v-for="product in filteredProducts"
+                        :key="product.id"
+                        :product_data="product"
+                        />
+                </transition-group>
+            </section>
+        </div>
     </main>
 </template>
 
@@ -20,12 +30,14 @@
 import { mapActions, mapGetters } from 'vuex'
 import CatalogItem from '../components/catalog/catalog-item.vue'
 import CatalogSelect from '../components/catalog/catalog-select.vue'
+import CatalogSkeleton from '../components/catalog/catalog-skeleton.vue'
 
 export default {
     name: "catalog",
     components: {
         CatalogItem,
-        CatalogSelect
+        CatalogSelect,
+        CatalogSkeleton
     },
     data() {
         return {
@@ -40,7 +52,9 @@ export default {
     },
     computed: {
         ...mapGetters({
-            products: 'PRODUCTS'
+            products: 'PRODUCTS',
+            isLoadingProducts: 'IS_LOADING_PRODUCTS',
+            isErrorLoadingProducts: 'IS_ERROR_LOADING_PRODUCTS'
         }),
         filteredProducts() {
             return this.sortedProducts.length ? this.sortedProducts : this.products;
@@ -70,22 +84,16 @@ export default {
 
 <style lang="scss">
     .catalog {
-        position: relative;
         &__title {
             padding-top: $padding*2;
             margin: 0 0 $margin*2;
         }
         &__list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            grid-gap: 28px;
-            justify-items: center;
+            grid-template-columns: repeat(auto-fill, 242px);
+            gap: 36px 18px;
+            justify-content: center;
         }
-        &__link-to-cart {
-            position: absolute;
-            top: 0px;
-            right: 0px;
-         }
     }
     .list {
         position: relative;

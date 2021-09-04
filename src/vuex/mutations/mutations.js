@@ -1,4 +1,4 @@
-export default { // setting and updating the state
+export default {
     SET_PRODUCTS_TO_STATE: (state, products) => {
         state.products = products;
     },
@@ -42,6 +42,12 @@ export default { // setting and updating the state
         state.isLoadingProduct = loading;
     },
     CHANGE_STATE_IS_ERROR_PRODUCT_LOADING: (state, loading) => {
+        state.isErrorLoadingProduct = loading;
+    },
+    CHANGE_STATE_IS_PRODUCTS_LOADING: (state, loading) => {
+        state.isLoadingProduct = loading;
+    },
+    CHANGE_STATE_IS_ERROR_PRODUCTS_LOADING: (state, loading) => {
         state.isErrorLoadingProduct = loading;
     }
 }

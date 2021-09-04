@@ -2,16 +2,20 @@ import axios from "axios";
 
 //const API_BASE_URL = 'https://my-json-server.typicode.com/TanyaKulikovskaya/Vue-Online-Shop'
 const API_BASE_URL = 'http://localhost:3000'
-export default { // actions = methods
+export default {
     GET_PRODUCTS_FROM_API({commit}) {
-        return axios.get(API_BASE_URL + '/products')
+        commit('CHANGE_STATE_IS_ERROR_PRODUCTS_LOADING', false);
+        commit('CHANGE_STATE_IS_PRODUCTS_LOADING', true);
+        return axios
+            .get(API_BASE_URL + '/products')
             .then((products) => {
                 commit('SET_PRODUCTS_TO_STATE', products.data);
-                return products;
             })
-            .catch((error) => {
-                console.log(error)
-                return error;
+            .catch(() => {
+                commit('CHANGE_STATE_IS_ERROR_PRODUCTS_LOADING', true)
+            })
+            .finally(() => {
+                commit('CHANGE_STATE_IS_PRODUCTS_LOADING', false)
             })
     },
     GET_PRODUCT_FROM_API({commit}, id) {

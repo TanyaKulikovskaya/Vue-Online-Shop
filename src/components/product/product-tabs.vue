@@ -1,5 +1,5 @@
 <template>
-  <div class="product-tabs">
+  <section class="product-tabs">
       <ul class="product-tabs__labels">
           <li 
             v-for="tab in tabs"
@@ -14,7 +14,7 @@
       <div class="product-tabs__content">
           <slot></slot>
       </div>
-  </div>
+  </section>
 </template>
 
 <script>

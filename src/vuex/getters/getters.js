@@ -1,4 +1,4 @@
-export default { // getters = computed properties
+export default {
     PRODUCTS(state) {
         return state.products;
     },
@@ -14,4 +14,10 @@ export default { // getters = computed properties
     IS_ERROR_LOADING_PRODUCT(state) {
         return state.isErrorLoadingProduct;
     },
+    IS_LOADING_PRODUCTS(state) {
+        return state.isLoadingProducts;
+    },
+    IS_ERROR_LOADING_PRODUCTS(state) {
+        return state.isErrorLoadingProducts;
+    }
 }

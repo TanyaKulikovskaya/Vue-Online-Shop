@@ -10,7 +10,7 @@
             <div class="product__header">
                 <go-back />
             </div>
-            <div class="product__body">
+            <section class="product__body">
                 <div class="product__img">
                     <img 
                         :src="productImagePath.image" 
@@ -31,7 +31,7 @@
                         {{ btnAddToCartText }}
                     </button>
                 </div> 
-            </div>
+            </section>
             <product-tabs>
                     <product-tab
                         :selected="true"

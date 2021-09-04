@@ -42,15 +42,17 @@ export default {
 
 <style lang="scss">
     .catalog-item {
-        max-width: fit-content;
         padding-bottom: $padding;
         border: $border;
         background-color: $white;
+        a {
+          display: block;
+        }
         &__img {
-          max-width: 300px;
           width: 100%;
-          height: auto;
+          height: 352px;
           margin-bottom: $margin;
+          background-color: $light-gray;
         }
         &__name {
           font-size: 16px;
