@@ -1,12 +1,12 @@
 <template>
     <main class="catalog">
-        <h1 class="catalog__title">Catalog</h1>
+        <h1 class="catalog__title">{{ catalogTitleText }}</h1>
         <div>
             <div v-if="isLoadingProducts">
                 <catalog-skeleton />
             </div>
             <div v-else-if="isErrorLoadingProducts">
-                error
+                <catalog-error />
             </div>
             <section v-else>
                 <catalog-select
@@ -27,20 +27,24 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import constants from '../services/constants'
 import CatalogItem from '../components/catalog/catalog-item.vue'
 import CatalogSelect from '../components/catalog/catalog-select.vue'
 import CatalogSkeleton from '../components/catalog/catalog-skeleton.vue'
+import CatalogError from '../components/catalog/catalog-error.vue'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
     name: "catalog",
     components: {
         CatalogItem,
         CatalogSelect,
-        CatalogSkeleton
+        CatalogSkeleton,
+        CatalogError
     },
     data() {
         return {
+            catalogTitleText: constants.CATALOG.TITLE_TEXT,
             categories: [
                 {name: 'All', value: 'ALL'},
                 {name: 'Furniture', value: 'FURNITURE'},
@@ -85,7 +89,6 @@ export default {
 <style lang="scss">
     .catalog {
         &__title {
-            padding-top: $padding*2;
             margin: 0 0 $margin*2;
         }
         &__list {

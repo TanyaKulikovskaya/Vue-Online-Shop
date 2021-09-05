@@ -41,7 +41,6 @@ export default {
 <style lang="scss">
     .product-tabs {
         padding-top: $padding*2;
-        padding-bottom: $padding*2;
         &__labels {
             display: flex;
             justify-content: space-between;

@@ -2,7 +2,7 @@
   <main class="cart">
       <div class="cart__header">
           <go-back />
-          <h1>{{ cartTitleText }}</h1>
+          <h1 class="cart__title">{{ cartTitleText }}</h1>
       </div>
       <p 
         class="cart__label"
@@ -85,13 +85,20 @@ export default {
         &__header {
             position: relative;
         }
+        &__title {
+            margin: 0 0 $margin*2;
+        }
         &__label {
             margin-bottom: $margin*4;
         }
         &__total {
             padding: $padding*2 $padding*3;
-            background-color: $gray;
+            background-color: $dark-gray;
+            color: $main-bg-color;
             font-size: 22px;
+            b {
+            letter-spacing: 2px;
+            }
         }
         &__link {
             padding: $padding $padding*3;

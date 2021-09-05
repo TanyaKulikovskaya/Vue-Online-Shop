@@ -38,13 +38,27 @@ ul li {
 
 .wrapper {
     max-width: 980px;
-    min-height: 100vh;
     margin: 0 auto;
-    padding: 0 40px 20px;
+    padding-left: $padding*5;
+    padding-right: $padding*5;
+}
+
+.content {
+    min-height: calc(100vh - 143px);
+    padding-top: $padding*3;
+    padding-bottom: $padding*5;
 }
 
 .btn {
     border: none;
     padding: $padding $padding*3;
     min-width: 130px;
+}
+
+
+@media screen and (max-width: 639px) {
+    .wrapper {
+        padding-left: $padding*4;
+        padding-right: $padding*4;
+    }
 }

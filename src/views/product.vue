@@ -133,26 +133,19 @@ export default {
             display: flex;
             flex-wrap: wrap;
             padding-top: $padding*2;
-            padding-bottom: $padding*2;
+            margin-bottom: $margin*4;
         }
         &__img {
-            position: relative;
             background-color: $light-gray;
-            padding-bottom: 60%;
-            flex: 0 0 40%;
-            height: 0;
-            overflow: hidden;
+            width: 284px;
+            height: 426px;
             box-shadow: $box-shadow;
             img {
-                position: absolute;
-                top: 0;
-                left: 0;
                 width: 100%;
                 height: 100%;
             }  
         }
         &__info {
-            flex: 0 0 60%;
             padding: $padding*2 $padding*4;
             text-align: left;
         }
@@ -191,10 +184,6 @@ export default {
             }
         }
         @media screen and (max-width: 639px) {
-            &__body {
-                padding-left: $padding*2;
-                padding-right: $padding*2;
-            }
             &__img {
                 margin-bottom: $margin*2;
             }

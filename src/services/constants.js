@@ -18,6 +18,13 @@ export default {
         TITLE: 'Sorry',
         MESSAGE: 'we can not load that page or something has gone wrong',
     },
+    CATALOG: {
+        TITLE_TEXT: 'Catalog'
+    },
+    ERROR_LOADING_CATALOG: {
+        TITLE: 'Oops',
+        MESSAGE: 'an error has occurred and we are working to fix the problem',
+    },
     GO_BACK_TEXT: 'Back',
     CART_ITEM: {
         ART_TEXT: 'Article',
@@ -33,5 +40,9 @@ export default {
         EMPTY_CART_SUBTITLE_TEXT: 'There are no products in cart',
         TOTAL_CART_TITLE_TEXT: 'Total',
         BTN_SHOP_TEXT: 'Shop now'
+    },
+    FOOTER: {
+        AUTHOR_TEXT: 'Created by Tatsiana Kulikouskaya',
+        COPYRIGHT_TEXT: 'All rights reserved'
     }
 }

@@ -2,21 +2,26 @@
   <div id="app">
     <div class="wrapper">
       <the-header />
-      <keep-alive :exclude="['product']">
-        <router-view></router-view>
-      </keep-alive>
+      <div class="content">
+        <keep-alive :exclude="['product']">
+          <router-view></router-view>
+        </keep-alive>
+      </div>
     </div>
+    <the-footer /> 
   </div>
 </template>
 
 <script>
 
 import TheHeader from './components/header/the-header.vue'
+import TheFooter from './components/footer/the-footer.vue'
 
 export default {
     name: 'App',
     components: {
-        TheHeader
+        TheHeader,
+        TheFooter
     }
 }
 </script>

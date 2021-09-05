@@ -1,9 +1,9 @@
 <template>
-    <header class="header">
+   <header class="header">
         <router-link to="/">
             <p class="header__logo">{{ headerLogoText }}</p>
         </router-link>
-         <router-link :to="{ name: 'cart' }">
+        <router-link :to="{ name: 'cart' }">
             <div class="header__link-to-cart">
                 <p>{{ headerCartText }}</p> 
                 <the-header-cart-counter-badge :count="cart.length" />
@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style lang="scss">
-    .header{
+    .header {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -45,6 +45,7 @@ export default {
         border-bottom: $border;
         &__logo {
             font-size: 20px;
+            line-height: 24px;
             letter-spacing: 2px;
         }
         &__link-to-cart {
