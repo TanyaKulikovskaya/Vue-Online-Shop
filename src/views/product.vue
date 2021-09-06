@@ -35,11 +35,11 @@
             <product-tabs>
                     <product-tab
                         :selected="true"
-                        label="description"
+                        :label="description"
                         >
                         {{ product.description }}
                     </product-tab>
-                    <product-tab label="dimensions">
+                    <product-tab :label="dimensions">
                         <ul>
                             <li 
                                 v-for="dimension in product.dimensions"
@@ -52,7 +52,7 @@
                             </li>
                         </ul>
                     </product-tab>
-                    <product-tab label="warranty">
+                    <product-tab :label="warranty">
                         {{ product.warranty }}
                     </product-tab>
             </product-tabs>
@@ -86,7 +86,7 @@ export default {
             btnAddToCartText: constants.PRODUCT.BTN_ADD_TO_CART_TEXT,
             description: constants.PRODUCT.TAB_LABELS.DESCRIPTION_TEXT,
             dimensions: constants.PRODUCT.TAB_LABELS.DIMENSIONS_TEXT,
-            warranty: constants.PRODUCT.TAB_LABELS.WARRANTY_TEXT
+            warranty: constants.PRODUCT.TAB_LABELS.WARRANRY_TEXT
         }
     },
     computed: {

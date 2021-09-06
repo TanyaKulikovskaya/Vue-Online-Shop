@@ -25,6 +25,10 @@ export default {
         TITLE: 'Oops',
         MESSAGE: 'an error has occurred and we are working to fix the problem',
     },
+    SELECT: {
+        PLACEHOLDER: 'Select category',
+        SELECT_LABEL: 'Select'
+    },
     GO_BACK_TEXT: 'Back',
     CART_ITEM: {
         ART_TEXT: 'Article',

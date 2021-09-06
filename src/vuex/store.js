@@ -21,7 +21,7 @@ let store = new Vuex.Store({
         isProductLoadingError: false,
         isLoadingProducts: false,
         isErrorLoadingProducts: false,
-        categories: ['All', 'Furniture', 'Decor'],
+        categories: [],
         selectedCategory: null
     },
     mutations,

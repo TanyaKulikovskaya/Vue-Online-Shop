@@ -50,6 +50,9 @@ export default {
     CHANGE_STATE_IS_ERROR_PRODUCTS_LOADING: (state, loading) => {
         state.isErrorLoadingProduct = loading;
     },
+    SET_CATEGORIES_TO_STATE(state, categories) {
+        state.categories = categories;
+    },
     CHANGE_STATE_SELECTED_CATEGORY(state, value) {
         state.selectedCategory = value;
     }

@@ -32,5 +32,15 @@ export default {
             .finally(() => {
                 commit('CHANGE_STATE_IS_PRODUCT_LOADING', false)
             })
+    },
+    GET_CATEGORIES_FROM_API({commit}) {
+        return axios
+            .get(API_BASE_URL + '/categories')
+            .then((categories) => {
+                commit('SET_CATEGORIES_TO_STATE', categories.data);
+            })
+            .catch((error) => {
+                console.log(error)
+            })
     }
 }

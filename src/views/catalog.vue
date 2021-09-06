@@ -47,7 +47,7 @@ export default {
     },
     computed: {
         ...mapState([
-            'selectedCategory', 
+            'selectedCategory'
         ]),
         ...mapGetters({
             products: 'PRODUCTS',
@@ -79,7 +79,7 @@ export default {
         }
         .catalog-select{
             max-width: 260px;
-            margin: $margin*4;
+            margin: 0 auto $margin*6;
         }
         &__list {
             display: grid;
