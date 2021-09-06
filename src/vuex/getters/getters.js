@@ -19,5 +19,8 @@ export default {
     },
     IS_ERROR_LOADING_PRODUCTS(state) {
         return state.isErrorLoadingProducts;
+    },
+    CATEGORIES(state) {
+        return state.categories;
     }
 }

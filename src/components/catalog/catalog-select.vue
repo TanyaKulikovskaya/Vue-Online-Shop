@@ -1,108 +1,39 @@
 <template>
-  <div class="catalog-select">
-      <p
-        class="catalog-select__title"
-        @click="areOptionsVisible = !areOptionsVisible"
+    <multiselect
+        placeholder="Select category"
+        selectLabel="Select"
+        :hideSelected="true"
+        :value="selectedCategory"
+        :options="categories"
+        :searchable="false"
+        @input="updateSelectedCategory"
         >
-        {{ selected }}
-      </p>
-      <div 
-        class="catalog-select__options"
-        v-if="areOptionsVisible"
-        >
-          <p
-            v-for="option in options"
-            :key="option.value"
-            @click="selectOption(option)"
-            >
-            {{ option.name }}
-          </p>
-      </div>
-  </div>
+    </multiselect>
 </template>
 
 <script>
+import Multiselect from 'vue-multiselect'
+import { mapActions, mapState } from 'vuex'
+
 export default {
-    name: "catalog-select",
-    props: {
-        options: {
-            type: Array,
-            default() {
-                return []
-            }
-        },
-        selected: {
-            type: String,
-            default: ''
-        },
+    name: 'catalog-select',
+    components: {
+        Multiselect
     },
-    data() {
-        return {
-            areOptionsVisible: false
-        }
+    computed: {
+        ...mapState([
+            'categories',
+            'selectedCategory' 
+        ])
     },
     methods: {
-        selectOption(option) {
-            this.$emit('select', option);
-            this.areOptionsVisible = false;
-        },
-        hideSelect() {
-            this.areOptionsVisible = false;
-        }
-    }, 
-    mounted() {
-        document.addEventListener('click', this.hideSelect.bind(this), true);
-    },
-    beforeDestroy() {
-        document.removeEventListener('click'. this.hideSelect());
+        ...mapActions({
+            updateSelectedCategory: 'UPDATE_SELECTED_CATEGORY'
+        })
     }
-
 }
 </script>
 
-<style lang="scss">
-    .catalog-select {
-        position: relative;
-        width: 180px;
-        height: 36px;
-        line-height: 36px;
-        border: $border;
-        border-radius: $radius;
-        margin-bottom: $margin*4;
-        cursor: pointer;
-        &__title {
-            position: relative;
-            font-weight: 700;
-            display: flex;
-            justify-content: center;
-            padding-right: $padding;
-        }
-        &__options {
-            position: absolute;
-            display: block;
-            width: 100%;
-            top: 100%;
-            left: 0;
-            border: $border;
-            border-radius: $radius;
-            background-color: $white;
-            font-size: 14px;
-            p:hover {
-                background-color: $light-gray;
-            }
-        }
-        &::after {
-            content: "\25BC";
-            position: absolute;
-            top: 0;
-            right: 0;
-            padding: 0 $padding;
-            max-height: 100%;
-            border-radius: $radius;
-            background-color: $light-gray;
-            cursor: pointer;
-            pointer-events: none;
-        }
-    }
+<style src="vue-multiselect/dist/vue-multiselect.min.css">
 
 </style>

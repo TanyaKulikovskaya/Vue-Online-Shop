@@ -49,5 +49,8 @@ export default {
     },
     CHANGE_STATE_IS_ERROR_PRODUCTS_LOADING: (state, loading) => {
         state.isErrorLoadingProduct = loading;
+    },
+    CHANGE_STATE_SELECTED_CATEGORY(state, value) {
+        state.selectedCategory = value;
     }
 }

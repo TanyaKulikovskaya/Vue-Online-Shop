@@ -1,11 +1,12 @@
-import Vue from "vue"
-import Vuex from "vuex"
-import createPersistedState from "vuex-persistedstate"
+import Vue from 'vue'
+import Vuex from 'vuex'
+import createPersistedState from 'vuex-persistedstate'
+
 
 import commonActions from './actions/actions'
-import apiRequests from "./actions/api-requests"
-import mutations from "./mutations/mutations";
-import getters from "./getters/getters";
+import apiRequests from './actions/api-requests'
+import mutations from './mutations/mutations';
+import getters from './getters/getters';
 
 const actions = {...commonActions, ...apiRequests}
 
@@ -19,7 +20,9 @@ let store = new Vuex.Store({
         isProductLoading: false,
         isProductLoadingError: false,
         isLoadingProducts: false,
-        isErrorLoadingProducts: false
+        isErrorLoadingProducts: false,
+        categories: ['All', 'Furniture', 'Decor'],
+        selectedCategory: null
     },
     mutations,
     actions,

@@ -9,11 +9,9 @@
                 <catalog-error />
             </div>
             <section v-else>
-                <catalog-select
-                    :options="categories"
-                    :selected="selected"
-                    @select="sortByCategories"
-                    />
+                <div class="catalog-select">
+                    <catalog-select />
+                </div>
                 <transition-group tag="ul" class="catalog__list" name="list">
                     <catalog-item 
                         v-for="product in filteredProducts"
@@ -32,7 +30,7 @@ import CatalogItem from '../components/catalog/catalog-item.vue'
 import CatalogSelect from '../components/catalog/catalog-select.vue'
 import CatalogSkeleton from '../components/catalog/catalog-skeleton.vue'
 import CatalogError from '../components/catalog/catalog-error.vue'
-import { mapActions, mapGetters } from 'vuex'
+import { mapActions, mapGetters, mapState } from 'vuex'
 
 export default {
     name: "catalog",
@@ -44,22 +42,21 @@ export default {
     },
     data() {
         return {
-            catalogTitleText: constants.CATALOG.TITLE_TEXT,
-            categories: [
-                {name: 'All', value: 'ALL'},
-                {name: 'Furniture', value: 'FURNITURE'},
-                {name: 'Decor', value: 'DECOR'},
-            ],
-            selected: 'All',
-            sortedProducts: []
+            catalogTitleText: constants.CATALOG.TITLE_TEXT
         }
     },
     computed: {
+        ...mapState([
+            'selectedCategory', 
+        ]),
         ...mapGetters({
             products: 'PRODUCTS',
             isLoadingProducts: 'IS_LOADING_PRODUCTS',
             isErrorLoadingProducts: 'IS_ERROR_LOADING_PRODUCTS'
         }),
+        sortedProducts() {
+            return this.products.filter(product => !product.category.indexOf(this.selectedCategory));
+        },
         filteredProducts() {
             return this.sortedProducts.length ? this.sortedProducts : this.products;
         }
@@ -67,18 +64,7 @@ export default {
     methods: {
         ...mapActions({
             getProductsFromApi: 'GET_PRODUCTS_FROM_API'
-            
         }),
-        sortByCategories(category) {
-            this.sortedProducts = [];
-            this.products.map(item => {
-                if(item.category === category.name) {
-                    this.sortedProducts.push(item);
-                }
-            });
-            this.selected = category.name;
-        },
-
     },
     created() {
         this.getProductsFromApi();
@@ -90,6 +76,10 @@ export default {
     .catalog {
         &__title {
             margin: 0 0 $margin*2;
+        }
+        .catalog-select{
+            max-width: 260px;
+            margin: $margin*4;
         }
         &__list {
             display: grid;

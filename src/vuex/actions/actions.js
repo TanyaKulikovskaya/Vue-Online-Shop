@@ -10,5 +10,8 @@ export default {
     },
     INCREMENT_CART_ITEM({commit}, index) {
         commit('INCREMENT_CART', index);
+    },
+    UPDATE_SELECTED_CATEGORY({commit}, value) {
+        commit('CHANGE_STATE_SELECTED_CATEGORY', value);
     }   
 }
