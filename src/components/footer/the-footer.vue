@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import constants from '../../services/constants'
+import constants from '../../services/constants';
 export default {
     name: 'the-footer',
     data() {

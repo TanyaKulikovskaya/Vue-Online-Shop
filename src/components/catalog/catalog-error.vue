@@ -8,14 +8,14 @@
 </template>
 
 <script>
-import constants from '../../services/constants'
+import constants from '../../services/constants';
 
 export default {
     name: 'catalog-error',
     data() {
         return {
-            titleErrorLoadingCatalog: constants.ERROR_LOADING_CATALOG.TITLE,
-            messageErrorLoadingCatalog: constants.ERROR_LOADING_CATALOG.MESSAGE,
+            titleErrorLoadingCatalog: constants.ERROR_LOADING_CATALOG.TITLE_TEXT,
+            messageErrorLoadingCatalog: constants.ERROR_LOADING_CATALOG.MESSAGE_TEXT,
             cssProp: {
                 backgroundImage: `url(${require('../../assets/images/error-bg.jpg')})`
             }

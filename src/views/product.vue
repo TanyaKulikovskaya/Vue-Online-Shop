@@ -35,11 +35,11 @@
             <product-tabs>
                     <product-tab
                         :selected="true"
-                        :label="description"
+                        :label="descriptionText"
                         >
                         {{ product.description }}
                     </product-tab>
-                    <product-tab :label="dimensions">
+                    <product-tab :label="dimensionsText">
                         <ul>
                             <li 
                                 v-for="dimension in product.dimensions"
@@ -52,7 +52,7 @@
                             </li>
                         </ul>
                     </product-tab>
-                    <product-tab :label="warranty">
+                    <product-tab :label="warrantyText">
                         {{ product.warranty }}
                     </product-tab>
             </product-tabs>
@@ -61,13 +61,13 @@
 </template>
 
 <script>
-import constants from '../services/constants'
-import GoBack from '../components/go-back.vue'
-import ProductTabs from '../components/product/product-tabs.vue'
-import ProductTab from '../components/product/product-tab.vue'
-import ProductSkeleton from '../components/product/product-skeleton.vue'
-import ProductError from '../components/product/product-error.vue'
-import { mapGetters, mapActions } from 'vuex'
+import constants from '../services/constants';
+import GoBack from '../components/go-back.vue';
+import ProductTabs from '../components/product/product-tabs.vue';
+import ProductTab from '../components/product/product-tab.vue';
+import ProductSkeleton from '../components/product/product-skeleton.vue';
+import ProductError from '../components/product/product-error.vue';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
     name: 'product',
@@ -84,9 +84,9 @@ export default {
             articleText: constants.PRODUCT.ART_TEXT,
             priceText: constants.PRODUCT.PRICE_TEXT,
             btnAddToCartText: constants.PRODUCT.BTN_ADD_TO_CART_TEXT,
-            description: constants.PRODUCT.TAB_LABELS.DESCRIPTION_TEXT,
-            dimensions: constants.PRODUCT.TAB_LABELS.DIMENSIONS_TEXT,
-            warranty: constants.PRODUCT.TAB_LABELS.WARRANRY_TEXT
+            descriptionText: constants.PRODUCT.TAB_LABELS.DESCRIPTION_TEXT,
+            dimensionsText: constants.PRODUCT.TAB_LABELS.DIMENSIONS_TEXT,
+            warrantyText: constants.PRODUCT.TAB_LABELS.WARRANRY_TEXT
         }
     },
     computed: {

@@ -15,20 +15,17 @@ export default {
         }
     },
     ERROR_LOADING_PRODUCT: {
-        TITLE: 'Sorry',
-        MESSAGE: 'we can not load that page or something has gone wrong',
+        TITLE_TEXT: 'Sorry',
+        MESSAGE_TEXT: 'we can not load that page or something has gone wrong',
     },
     CATALOG: {
         TITLE_TEXT: 'Catalog'
     },
     ERROR_LOADING_CATALOG: {
-        TITLE: 'Oops',
-        MESSAGE: 'an error has occurred and we are working to fix the problem',
+        TITLE_TEXT: 'Oops',
+        MESSAGE_TEXT: 'an error has occurred and we are working to fix the problem',
     },
-    SELECT: {
-        PLACEHOLDER: 'Select category',
-        SELECT_LABEL: 'Select'
-    },
+    SELECT_LABEL_TEXT: 'Press to select',
     GO_BACK_TEXT: 'Back',
     CART_ITEM: {
         ART_TEXT: 'Article',

@@ -14,8 +14,8 @@
 
 <script>
 
-import TheHeader from './components/header/the-header.vue'
-import TheFooter from './components/footer/the-footer.vue'
+import TheHeader from './components/header/the-header.vue';
+import TheFooter from './components/footer/the-footer.vue';
 
 export default {
     name: 'App',

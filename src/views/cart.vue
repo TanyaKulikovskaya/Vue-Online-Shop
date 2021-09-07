@@ -34,10 +34,10 @@
 </template>
 
 <script>
-import constants from '../services/constants'
-import CartItem from '../components/cart/cart-item.vue'
-import GoBack from '../components/go-back.vue'
-import { mapActions, mapGetters } from 'vuex'
+import constants from '../services/constants';
+import CartItem from '../components/cart/cart-item.vue';
+import GoBack from '../components/go-back.vue';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
     name: "cart",

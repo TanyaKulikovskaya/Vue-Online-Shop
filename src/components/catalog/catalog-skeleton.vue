@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import { TbSkeleton,Skeleton } from 'tb-skeleton'
+import { TbSkeleton,Skeleton } from 'tb-skeleton';
 
 export default {
     name: 'catalog-skeleton',

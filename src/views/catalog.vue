@@ -14,23 +14,24 @@
                 </div>
                 <transition-group tag="ul" class="catalog__list" name="list">
                     <catalog-item 
-                        v-for="product in filteredProducts"
+                        v-for="product in visibleProducts"
                         :key="product.id"
                         :product_data="product"
                         />
                 </transition-group>
+                <button @click="loadMore" v-if="limitToShow < filteredProducts.length">load more</button>
             </section>
         </div>
     </main>
 </template>
 
 <script>
-import constants from '../services/constants'
-import CatalogItem from '../components/catalog/catalog-item.vue'
-import CatalogSelect from '../components/catalog/catalog-select.vue'
-import CatalogSkeleton from '../components/catalog/catalog-skeleton.vue'
-import CatalogError from '../components/catalog/catalog-error.vue'
-import { mapActions, mapGetters, mapState } from 'vuex'
+import constants from '../services/constants';
+import CatalogItem from '../components/catalog/catalog-item.vue';
+import CatalogSelect from '../components/catalog/catalog-select.vue';
+import CatalogSkeleton from '../components/catalog/catalog-skeleton.vue';
+import CatalogError from '../components/catalog/catalog-error.vue';
+import { mapActions, mapGetters, mapState } from 'vuex';
 
 export default {
     name: "catalog",
@@ -42,7 +43,9 @@ export default {
     },
     data() {
         return {
-            catalogTitleText: constants.CATALOG.TITLE_TEXT
+            catalogTitleText: constants.CATALOG.TITLE_TEXT,
+            limitToShow: 2, 
+            step: 3
         }
     },
     computed: {
@@ -59,12 +62,18 @@ export default {
         },
         filteredProducts() {
             return this.sortedProducts.length ? this.sortedProducts : this.products;
+        },
+        visibleProducts() {
+            return this.filteredProducts.slice(0, this.limitToShow) 
         }
     },
     methods: {
         ...mapActions({
             getProductsFromApi: 'GET_PRODUCTS_FROM_API'
         }),
+        loadMore() {
+            return this.limitToShow += this.step;
+        }
     },
     created() {
         this.getProductsFromApi();

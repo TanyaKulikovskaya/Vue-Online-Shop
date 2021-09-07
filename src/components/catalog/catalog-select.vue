@@ -1,7 +1,7 @@
 <template>
     <multiselect
-        :placeholder="placeholder"
-        :selectLabel="selectLabel"
+        :placeholder="selectedCategory"
+        :selectLabel="selectLabelText"
         :hideSelected="true"
         :value="selectedCategory"
         :options="categories"
@@ -12,16 +12,15 @@
 </template>
 
 <script>
-import constants from '../../services/constants'
-import Multiselect from 'vue-multiselect'
-import { mapActions, mapState, mapGetters } from 'vuex'
+import constants from '../../services/constants';
+import Multiselect from 'vue-multiselect';
+import { mapActions, mapState, mapGetters } from 'vuex';
 
 export default {
     name: 'catalog-select',
     data() {
         return {
-            placeholder: constants.SELECT.PLACEHOLDER,
-            selectLabel: constants.SELECT.SELECT_LABEL
+            selectLabelText: constants.SELECT_LABEL_TEXT
         }
     },
     components: {

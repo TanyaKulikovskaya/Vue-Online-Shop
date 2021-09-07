@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import constants from '../../services/constants'
-import TheHeaderCartCounterBadge from './the-header-cart-counter-badge'
-import { mapGetters } from 'vuex'
+import constants from '../../services/constants';
+import TheHeaderCartCounterBadge from './the-header-cart-counter-badge';
+import { mapGetters } from 'vuex';
 
 export default {
     name: "the-header",

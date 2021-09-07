@@ -8,14 +8,14 @@
 </template>
 
 <script>
-import constants from '../../services/constants'
+import constants from '../../services/constants';
 
 export default {
     name: 'product-error',
     data() {
         return {
-            titleErrorLoadingProduct: constants.ERROR_LOADING_PRODUCT.TITLE,
-            messageErrorLoadingProduct: constants.ERROR_LOADING_PRODUCT.MESSAGE,
+            titleErrorLoadingProduct: constants.ERROR_LOADING_PRODUCT.TITLE_TEXT,
+            messageErrorLoadingProduct: constants.ERROR_LOADING_PRODUCT.MESSAGE_TEXT,
             cssProp: {
                 backgroundImage: `url(${require('../../assets/images/error-bg.jpg')})`
             }
