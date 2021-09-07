@@ -19,7 +19,10 @@ export default {
         MESSAGE_TEXT: 'we can not load that page or something has gone wrong',
     },
     CATALOG: {
-        TITLE_TEXT: 'Catalog'
+        TITLE_TEXT: 'Catalog',
+        LIMIT_TO_SHOW: 6,
+        STEP_TO_SHOW: 3,
+        BTN_LOAD_TEXT: 'Load more'
     },
     ERROR_LOADING_CATALOG: {
         TITLE_TEXT: 'Oops',

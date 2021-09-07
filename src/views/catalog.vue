@@ -19,7 +19,13 @@
                         :product_data="product"
                         />
                 </transition-group>
-                <button @click="loadMore" v-if="limitToShow < filteredProducts.length">load more</button>
+                <button
+                    class="catalog__load-btn btn"
+                    @click="loadMore"
+                    v-show="visibleBtnLoad"
+                    >
+                    {{ btnLoadText }}
+                </button>
             </section>
         </div>
     </main>
@@ -44,8 +50,9 @@ export default {
     data() {
         return {
             catalogTitleText: constants.CATALOG.TITLE_TEXT,
-            limitToShow: 2, 
-            step: 3
+            limitToShow: constants.CATALOG.LIMIT_TO_SHOW, 
+            stepToShow: constants.CATALOG.STEP_TO_SHOW,
+            btnLoadText: constants.CATALOG.BTN_LOAD_TEXT
         }
     },
     computed: {
@@ -65,6 +72,9 @@ export default {
         },
         visibleProducts() {
             return this.filteredProducts.slice(0, this.limitToShow) 
+        },
+        visibleBtnLoad() {
+            return this.limitToShow < this.filteredProducts.length;
         }
     },
     methods: {
@@ -72,11 +82,18 @@ export default {
             getProductsFromApi: 'GET_PRODUCTS_FROM_API'
         }),
         loadMore() {
-            return this.limitToShow += this.step;
+            return this.limitToShow += this.stepToShow;
         }
     },
     created() {
         this.getProductsFromApi();
+    },
+    watch: {
+        'sortedProducts': {
+            handler() {
+                this.limitToShow = constants.CATALOG.LIMIT_TO_SHOW;
+            } 
+        }
     }
 }
 </script>
@@ -95,6 +112,15 @@ export default {
             grid-template-columns: repeat(auto-fill, 242px);
             gap: 36px 18px;
             justify-content: center;
+            margin-bottom: $margin*2;
+        }
+        &__load-btn {
+                background-color: $main-font-color;
+                color: $main-bg-color;
+            &:hover {
+                background-color: $yellow;
+                color: $main-font-color;
+            }
         }
     }
     .list {
