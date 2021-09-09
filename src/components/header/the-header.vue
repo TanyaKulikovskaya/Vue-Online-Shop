@@ -1,6 +1,6 @@
 <template>
    <header class="header">
-        <router-link to="/">
+        <router-link :to="{ name: 'catalog' }">
             <p class="header__logo">{{ headerLogoText }}</p>
         </router-link>
         <router-link :to="{ name: 'cart' }">

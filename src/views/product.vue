@@ -117,17 +117,8 @@ export default {
             this.addToCart(this.product);
         }
     },
-    created() {
+    mounted() {
         this.getProductFromApi(this.$route.params.id);
-    },
-    watch: {
-        '$route.params.id': {
-            handler() {
-                if(this.this.$route.params.id !== undefined) {
-                    this.getProductFromApi(this.$route.params.id);
-                }
-            }
-        }
     }
 };
 </script>

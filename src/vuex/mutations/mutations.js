@@ -45,10 +45,10 @@ export default {
         state.isErrorLoadingProduct = loading;
     },
     CHANGE_STATE_IS_PRODUCTS_LOADING: (state, loading) => {
-        state.isLoadingProduct = loading;
+        state.isLoadingProducts = loading;
     },
     CHANGE_STATE_IS_ERROR_PRODUCTS_LOADING: (state, loading) => {
-        state.isErrorLoadingProduct = loading;
+        state.isErrorLoadingProducts = loading;
     },
     SET_CATEGORIES_TO_STATE(state, categories) {
         state.categories = categories;

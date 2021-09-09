@@ -37,11 +37,11 @@ export default {
     methods: {
         ...mapActions({
             updateSelectedCategory: 'UPDATE_SELECTED_CATEGORY',
-            getCategoriesFromApi: 'GET_CATEGORIES_FROM_API'
+            getCategoriesFromApi: 'GET_CATEGORIES_FROM_API',
         })
     },
     created() {
-        this.getCategoriesFromApi();
+        this.getCategoriesFromApi()
     }
 }
 </script>

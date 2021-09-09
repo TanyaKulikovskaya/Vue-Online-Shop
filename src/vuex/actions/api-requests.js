@@ -1,11 +1,12 @@
 import axios from "axios";
 
-//const API_BASE_URL = 'https://my-json-server.typicode.com/TanyaKulikovskaya/Vue-Online-Shop'
-const API_BASE_URL = 'http://localhost:3000'
+const API_BASE_URL = 'https://my-json-server.typicode.com/TanyaKulikovskaya/Vue-Online-Shop'
+//const API_BASE_URL = 'http://localhost:3000';
+
 export default {
     GET_PRODUCTS_FROM_API({commit}) {
-        commit('CHANGE_STATE_IS_ERROR_PRODUCTS_LOADING', false);
         commit('CHANGE_STATE_IS_PRODUCTS_LOADING', true);
+        commit('CHANGE_STATE_IS_ERROR_PRODUCTS_LOADING', false);
         return axios
             .get(API_BASE_URL + '/products')
             .then((products) => {
@@ -19,8 +20,8 @@ export default {
             })
     },
     GET_PRODUCT_FROM_API({commit}, id) {
-        commit('CHANGE_STATE_IS_ERROR_PRODUCT_LOADING', false);
         commit('CHANGE_STATE_IS_PRODUCT_LOADING', true);
+        commit('CHANGE_STATE_IS_ERROR_PRODUCT_LOADING', false);
         return axios
             .get(API_BASE_URL + '/products/' + `${id}`)
             .then((product) => {
@@ -40,7 +41,7 @@ export default {
                 commit('SET_CATEGORIES_TO_STATE', categories.data);
             })
             .catch((error) => {
-                console.log(error)
+                console.log(error);
             })
     }
 }

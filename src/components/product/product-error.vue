@@ -1,5 +1,5 @@
 <template>
-  <div class="product-error" :style="cssProp">
+  <div class="product-error" :style="cssPropProductError">
       <div class="product-error__content">
             <p class="product-error__title">{{ titleErrorLoadingProduct }},</p>
             <p class="product-error__message">{{ messageErrorLoadingProduct }}...</p>
@@ -16,7 +16,7 @@ export default {
         return {
             titleErrorLoadingProduct: constants.ERROR_LOADING_PRODUCT.TITLE_TEXT,
             messageErrorLoadingProduct: constants.ERROR_LOADING_PRODUCT.MESSAGE_TEXT,
-            cssProp: {
+            cssPropProductError: {
                 backgroundImage: `url(${require('../../assets/images/error-bg.jpg')})`
             }
         }

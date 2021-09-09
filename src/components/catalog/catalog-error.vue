@@ -1,9 +1,9 @@
 <template>
-  <div class="catalog-error" :style="cssProp">
-      <div class="catalog-error__content">
+    <div class="catalog-error" :style="cssPropCatalogError">
+        <div class="catalog-error__content">
             <p class="catalog-error__title">{{ titleErrorLoadingCatalog }},</p>
             <p class="catalog-error__message">{{ messageErrorLoadingCatalog }}...</p>
-      </div>
+        </div>
     </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
         return {
             titleErrorLoadingCatalog: constants.ERROR_LOADING_CATALOG.TITLE_TEXT,
             messageErrorLoadingCatalog: constants.ERROR_LOADING_CATALOG.MESSAGE_TEXT,
-            cssProp: {
+            cssPropCatalogError: {
                 backgroundImage: `url(${require('../../assets/images/error-bg.jpg')})`
             }
         }
