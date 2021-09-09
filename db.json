@@ -6,7 +6,7 @@
         "price": 1110.99,
         "id": "1",
         "category": "Furniture",
-        "warranty": "Sem fringilla ut morbi tincidunt augue. Dui vivamus arcu felis bibendum ut. Dictum fusce ut placerat orci nulla pellentesque dignissim enim. Fermentum iaculis eu non diam phasellus vestibulum lorem.",
+        "warranty": "Sem fringilla ut morbi tincidunt augue. Dui vivamus arcu felis bibendum ut.",
         "dimensions": [
           {
             "id": "AA",
@@ -33,7 +33,7 @@
             "unit": "kg"
           }
         ],
-        "description": "Adipiscing bibendum est ultricies integer quis auctor elit. Nullam ac tortor vitae purus faucibus ornare suspendisse. Sit amet nisl suscipit adipiscing bibendum est ultricies integer quis. Interdum velit euismod in pellentesque massa."
+        "description": "Adipiscing bibendum est ultricies integer quis auctor elit. Nullam ac tortor vitae purus faucibus ornare suspendisse."
       },
       {
         "image": "2.jpg",
@@ -41,7 +41,7 @@
         "price": 2115.99,
         "id": "2",
         "category": "Furniture",
-        "warranty": "Malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi. Consectetur libero id faucibus nisl tincidunt eget nullam non nisi.",
+        "warranty": "Malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi.",
         "dimensions": [
           {
             "id": "AF",
@@ -68,7 +68,7 @@
             "unit": "kg"
           }
         ],
-        "description": "Porttitor leo a diam sollicitudin tempor id. Diam donec adipiscing tristique risus nec feugiat in fermentum. Lorem dolor sed viverra ipsum nunc aliquet bibendum enim facilisis. Sociis natoque penatibus et magnis dis parturient montes nascetur. Nullam eget felis eget nunc lobortis mattis aliquam. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum."
+        "description": "Porttitor leo a diam sollicitudin tempor id. Diam donec adipiscing tristique risus nec feugiat in fermentum."
       },
       {
         "image": "3.jpg",
@@ -76,7 +76,7 @@
         "price": 220,
         "id": "3",
         "category": "Decor",
-        "warranty": "Malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi. Consectetur libero id faucibus nisl tincidunt eget nullam non nisi.",
+        "warranty": "Malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi.",
         "dimensions": [
           {
             "id": "AJ",
@@ -103,7 +103,7 @@
             "unit": "kg"
           }
         ],
-        "description": "Cursus vitae congue mauris rhoncus aenean. Ut sem viverra aliquet eget sit amet tellus cras. Pellentesque elit eget gravida cum sociis. Sociis natoque penatibus et magnis dis. Dignissim convallis aenean et tortor at risus viverra. Et tortor at risus viverra adipiscing at in tellus. Sit amet mauris commodo quis imperdiet massa tincidunt. Vestibulum sed arcu non odio euismod lacinia at quis risus."
+        "description": "Cursus vitae congue mauris rhoncus aenean. Ut sem viverra aliquet eget sit amet tellus cras."
       },
       {
         "image": "4.jpg",
@@ -111,7 +111,7 @@
         "price": 1530.9900,
         "id": "4",
         "category": "Furniture",
-        "warranty": "Pulvinar pellentesque habitant morbi tristique. Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Faucibus ornare suspendisse sed nisi.",
+        "warranty": "Pulvinar pellentesque habitant morbi tristique.",
         "dimensions": [
           {
             "id": "AO",
@@ -138,7 +138,7 @@
             "unit": "kg"
           }
         ],
-        "description": "Nulla facilisi nullam vehicula ipsum a arcu. Faucibus pulvinar elementum integer enim. Nunc pulvinar sapien et ligula ullamcorper malesuada. Mauris a diam maecenas sed enim. Eget est lorem ipsum dolor. Eu lobortis elementum nibh tellus molestie nunc non blandit. Aliquam vestibulum morbi blandit cursus risus at. Pharetra diam sit amet nisl suscipit adipiscing bibendum."
+        "description": "Nulla facilisi nullam vehicula ipsum a arcu."
       },
       {
         "image": "5.jpg",
@@ -146,7 +146,7 @@
         "price": 310.9,
         "id": "5",
         "category": "Decor",
-        "warranty": "Pulvinar pellentesque habitant morbi tristique. Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Faucibus ornare suspendisse sed nisi.",
+        "warranty": "Pulvinar pellentesque habitant morbi tristique.",
         "dimensions": [
           {
             "id": "AS",
@@ -173,7 +173,7 @@
             "unit": "kg"
           }
         ],
-        "description": "Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Orci porta non pulvinar neque laoreet suspendisse interdum consectetur. Eget duis at tellus at urna condimentum mattis pellentesque id. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum. Cursus eget nunc scelerisque viverra mauris in aliquam. At elementum eu facilisis sed odio. Morbi blandit cursus risus at ultrices mi."
+        "description": "Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus."
       },
       {
         "image": "6.jpg",
@@ -181,7 +181,7 @@
         "price": 2670.990,
         "id": "6",
         "category": "Furniture",
-        "warranty": "Vitae proin sagittis nisl rhoncus. Mi sit amet mauris commodo quis imperdiet massa. Proin libero nunc consequat interdum varius.",
+        "warranty": "Vitae proin sagittis nisl rhoncus. Mi sit amet mauris commodo quis imperdiet massa.",
         "dimensions": [
           {
             "id": "AW",
@@ -208,7 +208,7 @@
             "unit": "kg"
           }
         ],
-        "description": "Dui accumsan sit amet nulla facilisi morbi tempus. Sed risus pretium quam vulputate dignissim suspendisse. Nisl rhoncus mattis rhoncus urna neque. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi."
+        "description": "Dui accumsan sit amet nulla facilisi morbi tempus."
       },
       {
         "image": "7.jpg",
@@ -216,7 +216,7 @@
         "price": 530.9900,
         "id": "7",
         "category": "Decor",
-        "warranty": "Lacus vestibulum sed arcu non odio euismod lacinia at quis. Neque laoreet suspendisse interdum consectetur. Massa placerat duis ultricies lacus sed turpis tincidunt.",
+        "warranty": "Lacus vestibulum sed arcu non odio euismod lacinia at quis.",
         "dimensions": [
           {
             "id": "BA",
@@ -243,7 +243,7 @@
             "unit": "kg"
           }
         ],
-        "description": "Tortor dignissim convallis aenean et tortor. Facilisis mauris sit amet massa. Sed pulvinar proin gravida hendrerit. Sollicitudin tempor id eu nisl nunc mi. Aenean et tortor at risus viverra. Feugiat in fermentum posuere urna nec tincidunt. Magna etiam tempor orci eu lobortis."
+        "description": "Tortor dignissim convallis aenean et tortor. Facilisis mauris sit amet massa."
       },
       {
         "image": "8.jpg",
@@ -251,7 +251,7 @@
         "price": 1950.99,
         "id": "8",
         "category": "Furniture",
-        "warranty": "Tellus id interdum velit laoreet id. Tempus iaculis urna id volutpat lacus laoreet non curabitur. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida.",
+        "warranty": "Tellus id interdum velit laoreet id. Tempus iaculis urna id volutpat lacus laoreet non curabitur.",
         "dimensions": [
           {
             "id": "BE",
@@ -278,7 +278,7 @@
             "unit": "kg"
           }
         ],
-        "description": "Faucibus vitae aliquet nec ullamcorper sit. Id venenatis a condimentum vitae sapien pellentesque. Cras semper auctor neque vitae. Nullam vehicula ipsum a arcu cursus. Ut sem viverra aliquet eget sit amet tellus cras. Pellentesque elit eget gravida cum sociis. Sociis natoque penatibus et magnis dis. Dignissim convallis aenean et tortor at risus viverra. Et tortor at risus viverra adipiscing at in tellus. Sit amet mauris commodo quis imperdiet massa tincidunt."
+        "description": "Faucibus vitae aliquet nec ullamcorper sit. Id venenatis a condimentum vitae sapien pellentesque."
       },
       {
         "image": "9.jpg",
@@ -286,7 +286,7 @@
         "price": 1450.45,
         "id": "9",
         "category": "Furniture",
-        "warranty": "Sollicitudin tempor id eu nisl. Imperdiet massa tincidunt nunc pulvinar sapien. Ut sem nulla pharetra diam sit. Quis imperdiet massa tincidunt nunc pulvinar sapien et. Tempus iaculis urna id volutpat lacus laoreet non curabitur. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida.",
+        "warranty": "Sollicitudin tempor id eu nisl. Imperdiet massa tincidunt nunc pulvinar sapien. Ut sem nulla pharetra diam sit. Quis imperdiet massa tincidunt nunc pulvinar sapien et.",
         "dimensions": [
           {
             "id": "BI",
@@ -313,7 +313,7 @@
             "unit": "kg"
           }
         ],
-        "description": "Eget arcu dictum varius duis at consectetur lorem donec massa. Massa enim nec dui nunc mattis enim ut. Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus. Augue eget arcu dictum varius duis at consectetur. Auctor eu augue ut lectus arcu bibendum at varius. Eget dolor morbi non arcu risus."
+        "description": "Eget arcu dictum varius duis at consectetur lorem donec massa. Massa enim nec dui nunc mattis enim ut."
       },
       {
         "image": "10.jpg",
@@ -321,7 +321,7 @@
         "price": 2650.5,
         "id": "10",
         "category": "Furniture",
-        "warranty": "Auctor eu augue ut lectus arcu bibendum at varius. Eget dolor morbi non arcu risus. Sollicitudin tempor id eu nisl. Imperdiet massa tincidunt nunc pulvinar sapien. Ut sem nulla pharetra diam sit. Quis imperdiet massa tincidunt nunc pulvinar sapien et. Augue eget arcu dictum varius duis at consectetur.",
+        "warranty": "Auctor eu augue ut lectus arcu bibendum at varius.",
         "dimensions": [
           {
             "id": "BM",
@@ -348,7 +348,7 @@
             "unit": "kg"
           }
         ],
-        "description": "Augue eget arcu dictum varius duis at consectetur. Auctor eu augue ut lectus arcu bibendum at varius. Eget dolor morbi non arcu risus. Sollicitudin tempor id eu nisl. Imperdiet massa tincidunt nunc pulvinar sapien. Nulla pellentesque dignissim enim sit amet venenatis urna cursus. Diam vulputate ut pharetra sit amet aliquam id. Tincidunt praesent semper feugiat nibh sed pulvinar proin gravida hendrerit. Nunc sed blandit libero volutpat sed cras ornare arcu dui. Morbi tincidunt ornare massa eget egestas purus. Vel quam elementum pulvinar etiam non quam lacus suspendisse."
+        "description": "Augue eget arcu dictum varius duis at consectetur. Auctor eu augue ut lectus arcu bibendum at varius."
       }
     ]
   }

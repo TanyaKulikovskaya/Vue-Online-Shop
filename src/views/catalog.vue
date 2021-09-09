@@ -79,7 +79,7 @@ export default {
     },
     methods: {
         ...mapActions({
-            getProductsFromApi: 'GET_PRODUCTS_FROM_API',
+            getProductsFromApi: 'GET_PRODUCTS_FROM_API'
         }),
         loadMore() {
             return this.limitToShow += this.stepToShow;
