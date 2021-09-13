@@ -20,7 +20,7 @@ import { mapGetters } from 'vuex';
 export default {
     name: "the-header",
     components: {
-        TheHeaderCartCounterBadge,
+        TheHeaderCartCounterBadge
     },
     data() {
         return {
@@ -32,7 +32,7 @@ export default {
         ...mapGetters({
             cart: 'CART',
         })
-    },
+    }
 }
 </script>
 

@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const API_BASE_URL = 'https://my-json-server.typicode.com/TanyaKulikovskaya/Vue-Online-Shop'
-//const API_BASE_URL = 'http://localhost:3000';
 
 export default {
     GET_PRODUCTS_FROM_API({commit}) {

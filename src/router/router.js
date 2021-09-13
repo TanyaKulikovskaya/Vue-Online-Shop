@@ -1,9 +1,9 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from 'vue';
+import Router from 'vue-router';
 
-const Catalog = () => import('../views/catalog')
-const Product = () => import('../views/product')
-const Cart = () => import('../views/cart')
+const Catalog = () => import('../views/catalog');
+const Product = () => import('../views/product');
+const Cart = () => import('../views/cart');
 
 Vue.use(Router);
 
