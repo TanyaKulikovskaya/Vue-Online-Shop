@@ -4,7 +4,7 @@
 
 ### Demo - <https://cool005.netlify.app>
 
-## Built with
+### Built with
 
 * [Vue.JS](https://vuejs.org/)
 * [Vuex](https://vuex.vuejs.org/) (state management)
