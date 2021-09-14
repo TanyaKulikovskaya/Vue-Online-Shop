@@ -55,5 +55,8 @@ export default {
     },
     CHANGE_STATE_SELECTED_CATEGORY(state, value) {
         state.selectedCategory = value;
+    },
+    SET_TOKEN(state, t) {
+        state.token = t;
     }
 }

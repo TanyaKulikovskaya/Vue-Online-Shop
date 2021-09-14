@@ -1,354 +1,371 @@
-{   "categories": ["All", "Furniture", "Decor"],
-    "products": [
-      {
-        "image": "1.jpg",
-        "name": "teak lounger",
-        "price": 1110.99,
-        "id": "1",
-        "category": "Furniture",
-        "warranty": "Sem fringilla ut morbi tincidunt augue. Dui vivamus arcu felis bibendum ut.",
-        "dimensions": [
-          {
-            "id": "AA",
-            "name": "height",
-            "value": "40/90",
-            "unit": "cm"
-          },
-          {
-            "id": "AB",
-            "name": "width",
-            "value": "22",
-            "unit": "cm"
-          },
-          {
-            "id": "AD",
-            "name": "depth",
-            "value": "60",
-            "unit": "cm"
-          },
-          {
-            "id": "AE",
-            "name": "weight",
-            "value": "22",
-            "unit": "kg"
-          }
-        ],
-        "description": "Adipiscing bibendum est ultricies integer quis auctor elit. Nullam ac tortor vitae purus faucibus ornare suspendisse."
-      },
-      {
-        "image": "2.jpg",
-        "name": "velvet sofa",
-        "price": 2115.99,
-        "id": "2",
-        "category": "Furniture",
-        "warranty": "Malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi.",
-        "dimensions": [
-          {
-            "id": "AF",
-            "name": "height",
-            "value": "40/210",
-            "unit": "cm"
-          },
-          {
-            "id": "AG",
-            "name": "width",
-            "value": "40",
-            "unit": "cm"
-          },
-          {
-            "id": "AH",
-            "name": "depth",
-            "value": "60",
-            "unit": "cm"
-          },
-          {
-            "id": "AI",
-            "name": "weight",
-            "value": "60",
-            "unit": "kg"
-          }
-        ],
-        "description": "Porttitor leo a diam sollicitudin tempor id. Diam donec adipiscing tristique risus nec feugiat in fermentum."
-      },
-      {
-        "image": "3.jpg",
-        "name": "terasso vase",
-        "price": 220,
-        "id": "3",
-        "category": "Decor",
-        "warranty": "Malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi.",
-        "dimensions": [
-          {
-            "id": "AJ",
-            "name": "height",
-            "value": "20",
-            "unit": "cm"
-          },
-          {
-            "id": "AK",
-            "name": "width",
-            "value": "12",
-            "unit": "cm"
-          },
-          {
-            "id": "AM",
-            "name": "depth",
-            "value": "5",
-            "unit": "cm"
-          },
-          {
-            "id": "AN",
-            "name": "weight",
-            "value": "6",
-            "unit": "kg"
-          }
-        ],
-        "description": "Cursus vitae congue mauris rhoncus aenean. Ut sem viverra aliquet eget sit amet tellus cras."
-      },
-      {
-        "image": "4.jpg",
-        "name": "velvet chaise lounger",
-        "price": 1530.9900,
-        "id": "4",
-        "category": "Furniture",
-        "warranty": "Pulvinar pellentesque habitant morbi tristique.",
-        "dimensions": [
-          {
-            "id": "AO",
-            "name": "height",
-            "value": "40/90",
-            "unit": "cm"
-          },
-          {
-            "id": "AP",
-            "name": "width",
-            "value": "60",
-            "unit": "cm"
-          },
-          {
-            "id": "AQ",
-            "name": "depth",
-            "value": "30",
-            "unit": "cm"
-          },
-          {
-            "id": "AR",
-            "name": "weight",
-            "value": "26",
-            "unit": "kg"
-          }
-        ],
-        "description": "Nulla facilisi nullam vehicula ipsum a arcu."
-      },
-      {
-        "image": "5.jpg",
-        "name": "allegra vase",
-        "price": 310.9,
-        "id": "5",
-        "category": "Decor",
-        "warranty": "Pulvinar pellentesque habitant morbi tristique.",
-        "dimensions": [
-          {
-            "id": "AS",
-            "name": "height",
-            "value": "90",
-            "unit": "cm"
-          },
-          {
-            "id": "AT",
-            "name": "width",
-            "value": "60",
-            "unit": "cm"
-          },
-          {
-            "id": "AU",
-            "name": "depth",
-            "value": "30",
-            "unit": "cm"
-          },
-          {
-            "id": "AV",
-            "name": "weight",
-            "value": "2",
-            "unit": "kg"
-          }
-        ],
-        "description": "Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus."
-      },
-      {
-        "image": "6.jpg",
-        "name": "solid teak dining set",
-        "price": 2670.990,
-        "id": "6",
-        "category": "Furniture",
-        "warranty": "Vitae proin sagittis nisl rhoncus. Mi sit amet mauris commodo quis imperdiet massa.",
-        "dimensions": [
-          {
-            "id": "AW",
-            "name": "height",
-            "value": "70",
-            "unit": "cm"
-          },
-          {
-            "id": "AX",
-            "name": "width",
-            "value": "120",
-            "unit": "cm"
-          },
-          {
-            "id": "AY",
-            "name": "depth",
-            "value": "140",
-            "unit": "cm"
-          },
-          {
-            "id": "AZ",
-            "name": "weight",
-            "value": "30",
-            "unit": "kg"
-          }
-        ],
-        "description": "Dui accumsan sit amet nulla facilisi morbi tempus."
-      },
-      {
-        "image": "7.jpg",
-        "name": "wall mirror",
-        "price": 530.9900,
-        "id": "7",
-        "category": "Decor",
-        "warranty": "Lacus vestibulum sed arcu non odio euismod lacinia at quis.",
-        "dimensions": [
-          {
-            "id": "BA",
-            "name": "height",
-            "value": "70",
-            "unit": "cm"
-          },
-          {
-            "id": "BB",
-            "name": "width",
-            "value": "120",
-            "unit": "cm"
-          },
-          {
-            "id": "BC",
-            "name": "depth",
-            "value": "5",
-            "unit": "cm"
-          },
-          {
-            "id": "BD",
-            "name": "weight",
-            "value": "3",
-            "unit": "kg"
-          }
-        ],
-        "description": "Tortor dignissim convallis aenean et tortor. Facilisis mauris sit amet massa."
-      },
-      {
-        "image": "8.jpg",
-        "name": "armless lounge",
-        "price": 1950.99,
-        "id": "8",
-        "category": "Furniture",
-        "warranty": "Tellus id interdum velit laoreet id. Tempus iaculis urna id volutpat lacus laoreet non curabitur.",
-        "dimensions": [
-          {
-            "id": "BE",
-            "name": "height",
-            "value": "70",
-            "unit": "cm"
-          },
-          {
-            "id": "BF",
-            "name": "width",
-            "value": "120",
-            "unit": "cm"
-          },
-          {
-            "id": "BG",
-            "name": "depth",
-            "value": "50",
-            "unit": "cm"
-          },
-          {
-            "id": "BH",
-            "name": "weight",
-            "value": "38",
-            "unit": "kg"
-          }
-        ],
-        "description": "Faucibus vitae aliquet nec ullamcorper sit. Id venenatis a condimentum vitae sapien pellentesque."
-      },
-      {
-        "image": "9.jpg",
-        "name": "urban wood dresser",
-        "price": 1450.45,
-        "id": "9",
-        "category": "Furniture",
-        "warranty": "Sollicitudin tempor id eu nisl. Imperdiet massa tincidunt nunc pulvinar sapien. Ut sem nulla pharetra diam sit. Quis imperdiet massa tincidunt nunc pulvinar sapien et.",
-        "dimensions": [
-          {
-            "id": "BI",
-            "name": "height",
-            "value": "120",
-            "unit": "cm"
-          },
-          {
-            "id": "BJ",
-            "name": "width",
-            "value": "200",
-            "unit": "cm"
-          },
-          {
-            "id": "BK",
-            "name": "depth",
-            "value": "50",
-            "unit": "cm"
-          },
-          {
-            "id": "BL",
-            "name": "weight",
-            "value": "30",
-            "unit": "kg"
-          }
-        ],
-        "description": "Eget arcu dictum varius duis at consectetur lorem donec massa. Massa enim nec dui nunc mattis enim ut."
-      },
-      {
-        "image": "10.jpg",
-        "name": "modern velvet sofa",
-        "price": 2650.5,
-        "id": "10",
-        "category": "Furniture",
-        "warranty": "Auctor eu augue ut lectus arcu bibendum at varius.",
-        "dimensions": [
-          {
-            "id": "BM",
-            "name": "height",
-            "value": "120",
-            "unit": "cm"
-          },
-          {
-            "id": "BN",
-            "name": "width",
-            "value": "242",
-            "unit": "cm"
-          },
-          {
-            "id": "BO",
-            "name": "depth",
-            "value": "100",
-            "unit": "cm"
-          },
-          {
-            "id": "BP",
-            "name": "weight",
-            "value": "27",
-            "unit": "kg"
-          }
-        ],
-        "description": "Augue eget arcu dictum varius duis at consectetur. Auctor eu augue ut lectus arcu bibendum at varius."
-      }
-    ]
-  }
+{
+  "categories": [
+    "All",
+    "Furniture",
+    "Decor"
+  ],
+  "user": [
+    {
+      "username": "Tanya",
+      "password": "123456",
+      "token": "qwerty1"
+    },
+    {
+      "username": "Oleg",
+      "password": "123",
+      "token": "qwerty2"
+    }
+],
+  "products": [
+    {
+      "image": "1.jpg",
+      "name": "teak lounger",
+      "price": 1110.99,
+      "id": "1",
+      "category": "Furniture",
+      "warranty": "Sem fringilla ut morbi tincidunt augue. Dui vivamus arcu felis bibendum ut.",
+      "dimensions": [
+        {
+          "id": "AA",
+          "name": "height",
+          "value": "40/90",
+          "unit": "cm"
+        },
+        {
+          "id": "AB",
+          "name": "width",
+          "value": "22",
+          "unit": "cm"
+        },
+        {
+          "id": "AD",
+          "name": "depth",
+          "value": "60",
+          "unit": "cm"
+        },
+        {
+          "id": "AE",
+          "name": "weight",
+          "value": "22",
+          "unit": "kg"
+        }
+      ],
+      "description": "Adipiscing bibendum est ultricies integer quis auctor elit. Nullam ac tortor vitae purus faucibus ornare suspendisse."
+    },
+    {
+      "image": "2.jpg",
+      "name": "velvet sofa",
+      "price": 2115.99,
+      "id": "2",
+      "category": "Furniture",
+      "warranty": "Malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi.",
+      "dimensions": [
+        {
+          "id": "AF",
+          "name": "height",
+          "value": "40/210",
+          "unit": "cm"
+        },
+        {
+          "id": "AG",
+          "name": "width",
+          "value": "40",
+          "unit": "cm"
+        },
+        {
+          "id": "AH",
+          "name": "depth",
+          "value": "60",
+          "unit": "cm"
+        },
+        {
+          "id": "AI",
+          "name": "weight",
+          "value": "60",
+          "unit": "kg"
+        }
+      ],
+      "description": "Porttitor leo a diam sollicitudin tempor id. Diam donec adipiscing tristique risus nec feugiat in fermentum."
+    },
+    {
+      "image": "3.jpg",
+      "name": "terasso vase",
+      "price": 220,
+      "id": "3",
+      "category": "Decor",
+      "warranty": "Malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi.",
+      "dimensions": [
+        {
+          "id": "AJ",
+          "name": "height",
+          "value": "20",
+          "unit": "cm"
+        },
+        {
+          "id": "AK",
+          "name": "width",
+          "value": "12",
+          "unit": "cm"
+        },
+        {
+          "id": "AM",
+          "name": "depth",
+          "value": "5",
+          "unit": "cm"
+        },
+        {
+          "id": "AN",
+          "name": "weight",
+          "value": "6",
+          "unit": "kg"
+        }
+      ],
+      "description": "Cursus vitae congue mauris rhoncus aenean. Ut sem viverra aliquet eget sit amet tellus cras."
+    },
+    {
+      "image": "4.jpg",
+      "name": "velvet chaise lounger",
+      "price": 1530.99,
+      "id": "4",
+      "category": "Furniture",
+      "warranty": "Pulvinar pellentesque habitant morbi tristique.",
+      "dimensions": [
+        {
+          "id": "AO",
+          "name": "height",
+          "value": "40/90",
+          "unit": "cm"
+        },
+        {
+          "id": "AP",
+          "name": "width",
+          "value": "60",
+          "unit": "cm"
+        },
+        {
+          "id": "AQ",
+          "name": "depth",
+          "value": "30",
+          "unit": "cm"
+        },
+        {
+          "id": "AR",
+          "name": "weight",
+          "value": "26",
+          "unit": "kg"
+        }
+      ],
+      "description": "Nulla facilisi nullam vehicula ipsum a arcu."
+    },
+    {
+      "image": "5.jpg",
+      "name": "allegra vase",
+      "price": 310.9,
+      "id": "5",
+      "category": "Decor",
+      "warranty": "Pulvinar pellentesque habitant morbi tristique.",
+      "dimensions": [
+        {
+          "id": "AS",
+          "name": "height",
+          "value": "90",
+          "unit": "cm"
+        },
+        {
+          "id": "AT",
+          "name": "width",
+          "value": "60",
+          "unit": "cm"
+        },
+        {
+          "id": "AU",
+          "name": "depth",
+          "value": "30",
+          "unit": "cm"
+        },
+        {
+          "id": "AV",
+          "name": "weight",
+          "value": "2",
+          "unit": "kg"
+        }
+      ],
+      "description": "Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus."
+    },
+    {
+      "image": "6.jpg",
+      "name": "solid teak dining set",
+      "price": 2670.99,
+      "id": "6",
+      "category": "Furniture",
+      "warranty": "Vitae proin sagittis nisl rhoncus. Mi sit amet mauris commodo quis imperdiet massa.",
+      "dimensions": [
+        {
+          "id": "AW",
+          "name": "height",
+          "value": "70",
+          "unit": "cm"
+        },
+        {
+          "id": "AX",
+          "name": "width",
+          "value": "120",
+          "unit": "cm"
+        },
+        {
+          "id": "AY",
+          "name": "depth",
+          "value": "140",
+          "unit": "cm"
+        },
+        {
+          "id": "AZ",
+          "name": "weight",
+          "value": "30",
+          "unit": "kg"
+        }
+      ],
+      "description": "Dui accumsan sit amet nulla facilisi morbi tempus."
+    },
+    {
+      "image": "7.jpg",
+      "name": "wall mirror",
+      "price": 530.99,
+      "id": "7",
+      "category": "Decor",
+      "warranty": "Lacus vestibulum sed arcu non odio euismod lacinia at quis.",
+      "dimensions": [
+        {
+          "id": "BA",
+          "name": "height",
+          "value": "70",
+          "unit": "cm"
+        },
+        {
+          "id": "BB",
+          "name": "width",
+          "value": "120",
+          "unit": "cm"
+        },
+        {
+          "id": "BC",
+          "name": "depth",
+          "value": "5",
+          "unit": "cm"
+        },
+        {
+          "id": "BD",
+          "name": "weight",
+          "value": "3",
+          "unit": "kg"
+        }
+      ],
+      "description": "Tortor dignissim convallis aenean et tortor. Facilisis mauris sit amet massa."
+    },
+    {
+      "image": "8.jpg",
+      "name": "armless lounge",
+      "price": 1950.99,
+      "id": "8",
+      "category": "Furniture",
+      "warranty": "Tellus id interdum velit laoreet id. Tempus iaculis urna id volutpat lacus laoreet non curabitur.",
+      "dimensions": [
+        {
+          "id": "BE",
+          "name": "height",
+          "value": "70",
+          "unit": "cm"
+        },
+        {
+          "id": "BF",
+          "name": "width",
+          "value": "120",
+          "unit": "cm"
+        },
+        {
+          "id": "BG",
+          "name": "depth",
+          "value": "50",
+          "unit": "cm"
+        },
+        {
+          "id": "BH",
+          "name": "weight",
+          "value": "38",
+          "unit": "kg"
+        }
+      ],
+      "description": "Faucibus vitae aliquet nec ullamcorper sit. Id venenatis a condimentum vitae sapien pellentesque."
+    },
+    {
+      "image": "9.jpg",
+      "name": "urban wood dresser",
+      "price": 1450.45,
+      "id": "9",
+      "category": "Furniture",
+      "warranty": "Sollicitudin tempor id eu nisl. Imperdiet massa tincidunt nunc pulvinar sapien. Ut sem nulla pharetra diam sit. Quis imperdiet massa tincidunt nunc pulvinar sapien et.",
+      "dimensions": [
+        {
+          "id": "BI",
+          "name": "height",
+          "value": "120",
+          "unit": "cm"
+        },
+        {
+          "id": "BJ",
+          "name": "width",
+          "value": "200",
+          "unit": "cm"
+        },
+        {
+          "id": "BK",
+          "name": "depth",
+          "value": "50",
+          "unit": "cm"
+        },
+        {
+          "id": "BL",
+          "name": "weight",
+          "value": "30",
+          "unit": "kg"
+        }
+      ],
+      "description": "Eget arcu dictum varius duis at consectetur lorem donec massa. Massa enim nec dui nunc mattis enim ut."
+    },
+    {
+      "image": "10.jpg",
+      "name": "modern velvet sofa",
+      "price": 2650.5,
+      "id": "10",
+      "category": "Furniture",
+      "warranty": "Auctor eu augue ut lectus arcu bibendum at varius.",
+      "dimensions": [
+        {
+          "id": "BM",
+          "name": "height",
+          "value": "120",
+          "unit": "cm"
+        },
+        {
+          "id": "BN",
+          "name": "width",
+          "value": "242",
+          "unit": "cm"
+        },
+        {
+          "id": "BO",
+          "name": "depth",
+          "value": "100",
+          "unit": "cm"
+        },
+        {
+          "id": "BP",
+          "name": "weight",
+          "value": "27",
+          "unit": "kg"
+        }
+      ],
+      "description": "Augue eget arcu dictum varius duis at consectetur. Auctor eu augue ut lectus arcu bibendum at varius."
+    }
+  ]
+}

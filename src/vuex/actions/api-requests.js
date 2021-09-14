@@ -1,7 +1,9 @@
 import axios from "axios";
 
-const API_BASE_URL = 'https://my-json-server.typicode.com/TanyaKulikovskaya/Vue-Online-Shop'
+//const API_BASE_URL = 'https://my-json-server.typicode.com/TanyaKulikovskaya/Vue-Online-Shop'
 
+axios.defaults.withCredentials = true;
+const API_BASE_URL = 'http://localhost:3000'
 export default {
     async GET_PRODUCTS_FROM_API({commit}) {
         commit('CHANGE_STATE_IS_PRODUCTS_LOADING', true);
@@ -39,5 +41,21 @@ export default {
         catch(error) {
             console.log(error);
         }
+    },
+    async login(context, credentials) {
+        try {
+            const res = await axios.get(API_BASE_URL + '/user', {                
+                username: credentials.username,
+                password: credentials.password
+            });
+            let status = res.data.username === credentials.username && res.data.password === credentials.password ? true : false;
+            if(status) {
+                context.commit('SET_TOKEN', res.data.token);
+            }
+            return status;
+        }
+        catch(error) {
+            console.error(error);
+        }  
     }
 }
