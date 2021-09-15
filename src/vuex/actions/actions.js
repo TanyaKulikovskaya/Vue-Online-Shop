@@ -13,5 +13,9 @@ export default {
     },
     UPDATE_SELECTED_CATEGORY({commit}, value) {
         commit('CHANGE_STATE_SELECTED_CATEGORY', value);
-    }   
+    },
+    // async LOGOUT({commit}){
+    //     let user = null;
+    //     commit('LOGOUT', user);
+    // }  
 }
