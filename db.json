@@ -4,18 +4,7 @@
     "Furniture",
     "Decor"
   ],
-  "user": [
-    {
-      "username": "Tanya",
-      "password": "123456",
-      "token": "qwerty1"
-    },
-    {
-      "username": "Oleg",
-      "password": "123",
-      "token": "qwerty2"
-    }
-],
+  "users": [],
   "products": [
     {
       "image": "1.jpg",

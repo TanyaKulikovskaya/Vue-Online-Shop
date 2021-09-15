@@ -5,6 +5,9 @@ const Catalog = () => import('../views/catalog');
 const Product = () => import('../views/product');
 const Cart = () => import('../views/cart');
 const Login = () => import('../views/login');
+const Register = () => import('../views/register');
+
+import store from '../vuex/store'
 
 Vue.use(Router);
 
@@ -24,6 +27,9 @@ let router = new Router({
         {   path: '/cart',
             name: 'cart',
             component: Cart,
+            meta: { 
+                requiresAuth: true
+            }
         },
         {
             path: '/login',
@@ -31,8 +37,26 @@ let router = new Router({
             component: Login,
             
         },
+        {
+            path: '/register',
+            name: "register",
+            component: Register,
+            
+        },
     ]
 });
+
+router.beforeEach((to, from, next) => {
+    if(to.matched.some(record => record.meta.requiresAuth)) {
+        if (store.getters.IS_LOGGED_IN) {
+            next()
+            return
+        }
+        next('/login') 
+    } else {
+        next() 
+    }
+})
 
 
 

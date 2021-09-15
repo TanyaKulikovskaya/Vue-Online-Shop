@@ -4,9 +4,15 @@
             <p class="header__logo">{{ headerLogoText }}</p>
         </router-link>
         <div class="header__actions">
-            <router-link :to="{ name: 'login' }">
-                <span class="header__login">{{ headerLoginText }}</span>
-            </router-link>
+            <div v-if ="!isLoggedIn">
+                <router-link :to="{ name: 'login' }">
+                    <span  class="header__login">{{ headerLoginText }}</span>
+                </router-link>
+                <router-link :to="{ name: 'register' }">
+                    <span class="header__register">Register</span>
+                </router-link>
+            </div>
+            <span class="header__logout"><a v-if ="isLoggedIn" @click="logout">Logout</a></span>
             <router-link :to="{ name: 'cart' }">
                 <div class="header__link-to-cart">
                     <span>{{ headerCartText }}</span> 
@@ -20,7 +26,7 @@
 <script>
 import constants from '../../services/constants';
 import TheHeaderCartCounterBadge from './the-header-cart-counter-badge';
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters } from 'vuex';
 
 export default {
     name: "the-header",
@@ -37,18 +43,17 @@ export default {
     computed: {
         ...mapGetters({
             cart: 'CART',
-            isAuthenticated: 'IS_AUTHENTICATED'
-        })
+            isLoggedIn: 'IS_LOGGED_IN'
+        }),
     },
     methods: {
-        ...mapActions({
-            logOut: 'LOGOUT'
-        }),
-        async logout() {
-            await this.logOut;
-            this.$router.push('/')
-        }
-    },
+        logout: function () {
+            this.$store.dispatch('LOGOUT')
+                .then(() => {
+                    this.$router.push('/login')
+                })
+        },
+    }
 }
 </script>
 
@@ -67,8 +72,10 @@ export default {
             line-height: 24px;
             letter-spacing: 2px;
         }
-        &__login {
-            margin-right: $margin*2;
+        &__login,
+        &__register,
+        &__logout {
+            margin-right: $margin;
         }
         &__link-to-cart {
             position: relative;

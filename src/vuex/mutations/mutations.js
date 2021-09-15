@@ -56,7 +56,15 @@ export default {
     CHANGE_STATE_SELECTED_CATEGORY(state, value) {
         state.selectedCategory = value;
     },
-    SET_TOKEN(state, t) {
-        state.token = t;
+    AUTH_SUCCESS(state, token) {
+        state.status = 'success';
+        state.token = token;
+    },
+    AUTH_ERROR(state) {
+        state.status = 'error';
+    },
+    SET_LOGOUT(state) {
+        state.token = '';
+        state.authStatus = '';
     }
 }

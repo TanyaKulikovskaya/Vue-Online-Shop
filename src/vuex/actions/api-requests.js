@@ -1,9 +1,9 @@
 import axios from "axios";
 
-//const API_BASE_URL = 'https://my-json-server.typicode.com/TanyaKulikovskaya/Vue-Online-Shop'
+const API_BASE_URL = 'https://my-json-server.typicode.com/TanyaKulikovskaya/Vue-Online-Shop'
 
-axios.defaults.withCredentials = true;
-const API_BASE_URL = 'http://localhost:3000'
+
+//const API_BASE_URL = 'http://localhost:3000'
 export default {
     async GET_PRODUCTS_FROM_API({commit}) {
         commit('CHANGE_STATE_IS_PRODUCTS_LOADING', true);
@@ -42,20 +42,41 @@ export default {
             console.log(error);
         }
     },
-    async login(context, credentials) {
-        try {
-            const res = await axios.get(API_BASE_URL + '/user', {                
-                username: credentials.username,
-                password: credentials.password
-            });
-            let status = res.data.username === credentials.username && res.data.password === credentials.password ? true : false;
-            if(status) {
-                context.commit('SET_TOKEN', res.data.token);
-            }
-            return status;
-        }
-        catch(error) {
-            console.error(error);
-        }  
+    register({commit}, data) {
+        return axios.post(API_BASE_URL + '/users', {
+            email: data.email,
+            password: data.password
+        })
+            .then((res)=> {
+                const token = res.data.accessToken;
+                localStorage.setItem('token', token);
+                axios.defaults.headers.common['Authorization'] = token;
+                commit('AUTH_SUCCESS', token);
+            })
+            .catch(() =>{
+                localStorage.removeItem('token');
+                commit('AUTH_ERROR');
+            })
+    },
+    login({commit}, credentials) {
+        return axios.post(API_BASE_URL + '/login', {                
+            email: credentials.email,
+            password: credentials.password
+        })
+            .then((res)=> {
+                const token = res.data.accessToken;
+                localStorage.setItem('token', token);
+                axios.defaults.headers.common['Authorization'] = token;
+                commit('AUTH_SUCCESS', token);
+            })
+            .catch(() => {
+                localStorage.removeItem('token');
+                commit('AUTH_ERROR');
+            }) 
+    },
+    LOGOUT({commit}) {
+        localStorage.removeItem('token');
+        delete axios.defaults.headers.common['Authorization'];
+        commit('SET_LOGOUT');
     }
 }

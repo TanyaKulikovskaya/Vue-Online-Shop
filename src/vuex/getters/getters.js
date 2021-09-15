@@ -22,5 +22,11 @@ export default {
     },
     CATEGORIES(state) {
         return state.categories;
+    },
+    IS_LOGGED_IN(state) {
+        return !!state.token;
+    },
+    AUTH_STATUS(state) {
+        return state.authStatus;
     }
 }

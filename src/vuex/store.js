@@ -22,7 +22,8 @@ let store = new Vuex.Store({
         isErrorLoadingProducts: false,
         categories: [],
         selectedCategory: 'All',
-        token: '',
+        token: localStorage.getItem('token') || '',
+        authStatus: ''
     },
     mutations,
     actions,

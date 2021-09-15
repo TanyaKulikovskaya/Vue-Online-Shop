@@ -2,16 +2,16 @@
     <div class="login">
         <form @submit.prevent="login">
             <div>
-              <label for="username">Username:</label>
-              <input type="text" name="username" v-model="username" />
+                <label for="email">E-Mail</label>
+                <input id="email" type="email" v-model="email" required>
             </div>
             <div>
-              <label for="password">Password:</label>
-              <input type="password" name="password" v-model="password" />
+                <label for="password">Password:</label>
+                <input type="password" name="password" v-model="password" />
             </div>
-            <button type="submit">Submit</button>
+            <button class="btn" type="submit">Login</button>
         </form>
-      <p v-if="showError">error</p>
+      <p v-if="showError">{{ errorMessage }}</p>
     </div>
 </template>
 <script>
@@ -20,23 +20,26 @@ export default {
     name: "login",
     data() {
         return {
-            username: "",
-            password: "",
-            showError: false
+            email : "",
+            password : "",
+            showError: false,
+            errorMessage: ''
         };
     },
     methods: {
-        async login() {
-            let response = await this.$store.dispatch("login", {
-                username: this.username,
+        login: function () {
+            let data = {
+                email: this.email,
                 password: this.password,
-            });
-            if (response) {
-                this.$router.push("/");
-            } 
-            this.showError = true;
-            
+            }
+            this.$store.dispatch("login", data)
+                .then(() => this.$router.push('/cart'))
+                .catch(() => {
+                    this.showError = true;
+                    this.errorMessage = 'Incorrect credentials';
+                })
         }
+            
     }
 }
 </script>
