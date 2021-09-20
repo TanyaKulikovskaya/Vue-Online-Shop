@@ -1,6 +1,6 @@
 # Online-shop
 
-## Single Page Application e-Commerse Template
+## Single Page Application Template
 
 ### Demo - <https://cool005.netlify.app>
 
