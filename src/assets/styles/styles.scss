@@ -36,28 +36,6 @@ ul li {
     list-style: none;
 }
 
-form {
-    max-width: 300px;
-    margin: 0 auto;
-}
-
-input {
-    display: block;
-    width: 100%;
-    outline: none;
-    border: $border;
-    padding: $padding $padding*2;
-    color: $black;
-    margin-bottom: $margin;
-}
-
-label {
-    display: block;
-    width: 100%;
-    text-align: left;
-    padding-left: $padding;
-}
-
 .wrapper {
     max-width: 980px;
     margin: 0 auto;

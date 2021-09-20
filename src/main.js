@@ -9,14 +9,6 @@ import  'tb-skeleton/dist/skeleton.css';
 import Grid from 'simple-xgrid';
 import  'simple-xgrid/dist/simple-grid.css';
 
-
-import axios from 'axios';
-const token = localStorage.getItem('token');
-
-if (token) {
-    axios.defaults.headers.common['Authorization'] = token;
-}
-
 Vue.config.productionTip = false;
 
 Vue.use(

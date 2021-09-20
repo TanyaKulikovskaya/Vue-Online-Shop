@@ -1,7 +1,6 @@
 export default {
     HEADER: {
         LOGO_TEXT: 'FUNIRO',
-        LOGIN_TEXT: 'Login',
         CART_TEXT: 'Cart'
     },
     ALT_TEXT: 'Image of',

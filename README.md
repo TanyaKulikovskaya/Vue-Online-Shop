@@ -1,6 +1,6 @@
 # Online-shop
 
-## Single Page Application Template
+## Single Page Application e-Commerse Template
 
 ### Demo - <https://cool005.netlify.app>
 
@@ -11,7 +11,6 @@
 * [Vue Router](https://router.vuejs.org/) (navigation between views)
 * [Axios](https://axios-http.com/) (making an HTTP requests)
 * [JSON-Server](https://github.com/typicode/json-server) (mock REST API)
-* [JSON Server Auth](https://www.npmjs.com/package/json-server-auth) (JWT authentication middleware for JSON Server)
 * [Vuex-persistedstate](https://www.npmjs.com/package/vuex-persistedstate) (storing data with Local Storage and Vuex)
 * [Vue-multiselect](https://vue-multiselect.js.org/) (select component for data filtering)
 * [TB Skeleton](https://github.com/anthinkingcoder/tb-skeleton) (showing the skeleton screen loading)
@@ -28,8 +27,7 @@ This project implements basic shopping template features:
 * Adding product to the cart
 * Displaying the amount of unique products in the cart
 * Navigation to the cart page by click
-* Increment, decrement, remove product from the cart
-* Authorizaition
+* Increment, decrement, remove product from the cart 
 
 ## Project setup
 ```
