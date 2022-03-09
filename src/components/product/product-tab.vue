@@ -30,3 +30,8 @@ export default {
     }
 }
 </script>
+<style lang="scss">
+ .product-tab {
+     min-height: 98px;
+ }
+</style>
